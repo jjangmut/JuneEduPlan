@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>브리즈번 유학 마스터 플랜</title>
+<style>
+:root{
+  --bg:#f6f8fb; --card:#ffffff; --text:#172033; --muted:#667085;
+  --line:#e4e7ec; --accent:#1f6feb; --accent2:#0f766e; --warn:#b54708;
+  --soft:#eef4ff; --soft2:#ecfdf3; --softw:#fffaeb;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:"Segoe UI","Malgun Gothic",Arial,sans-serif;background:var(--bg);color:var(--text);line-height:1.65}
+header{background:linear-gradient(135deg,#102a43,#1f6feb);color:white;padding:36px 24px 30px}
+.wrap{max-width:1180px;margin:auto}
+h1{font-size:32px;margin:0 0 8px}.sub{opacity:.9;font-size:15px}
+.topmeta{display:flex;gap:14px;flex-wrap:wrap;margin-top:16px}
+.badge{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.25);padding:6px 10px;border-radius:999px;font-size:13px}
+nav{position:sticky;top:0;z-index:5;background:white;border-bottom:1px solid var(--line);box-shadow:0 2px 8px rgba(16,24,40,.05)}
+nav .wrap{display:flex;gap:14px;overflow:auto;padding:10px 18px}
+nav a{white-space:nowrap;text-decoration:none;color:#344054;font-size:14px;padding:6px 9px;border-radius:8px}
+nav a:hover{background:#f2f4f7;color:#101828}
+main{padding:26px 18px 60px}
+section{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px;margin:0 0 20px;box-shadow:0 1px 4px rgba(16,24,40,.04)}
+h2{margin:0 0 15px;font-size:23px} h3{font-size:18px;margin:22px 0 10px}
+.note{padding:13px 15px;border-radius:10px;background:var(--soft);border-left:4px solid var(--accent);margin:12px 0}
+.good{background:var(--soft2);border-left-color:var(--accent2)} .warn{background:var(--softw);border-left-color:var(--warn)}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.grid3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.card{border:1px solid var(--line);border-radius:12px;padding:16px;background:#fff}
+.card h3{margin-top:0}
+.kpi{font-size:25px;font-weight:700;color:var(--accent)} .small{font-size:13px;color:var(--muted)}
+table{width:100%;border-collapse:collapse;margin:12px 0;font-size:14px}
+th,td{border-bottom:1px solid var(--line);padding:10px 9px;text-align:left;vertical-align:top}
+th{background:#f9fafb;color:#344054}
+tr:hover td{background:#fcfcfd}
+.tag{display:inline-block;padding:3px 7px;border-radius:999px;background:#f2f4f7;font-size:12px;margin:2px}
+.tag.blue{background:#eaf2ff;color:#174ea6}.tag.green{background:#e8f7ef;color:#067647}.tag.orange{background:#fff1e8;color:#b54708}
+.timeline{border-left:3px solid #d0d5dd;margin-left:9px;padding-left:18px}
+.titem{margin:0 0 18px}.titem b{color:#101828}
+button{border:1px solid var(--line);background:#fff;border-radius:9px;padding:8px 11px;cursor:pointer}
+button.active{background:#1f6feb;color:#fff;border-color:#1f6feb}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin:10px 0 16px}
+.hidden{display:none}
+.checklist label{display:block;padding:6px 0}
+a{color:#1f6feb}
+footer{color:var(--muted);font-size:12px;padding:4px 2px}
+@media(max-width:780px){.grid,.grid3{grid-template-columns:1fr}h1{font-size:26px}section{padding:17px}table{font-size:13px}}
+@media print{nav,.filters{display:none}body{background:white}section{box-shadow:none;break-inside:avoid}}
+</style>
+</head>
+<body>
+<header>
+  <div class="wrap">
+    <h1>브리즈번 유학 마스터 플랜</h1>
+    <div class="sub">2014년 5월생 남학생 · 엄마 동행 · 2027년 하반기 또는 2028년 출국 시나리오 관리 문서</div>
+    <div class="topmeta">
+      <span class="badge">기준 도시: Brisbane, Queensland</span>
+      <span class="badge">현재 기준일: 2026-09-17</span>
+      <span class="badge">문서 버전: v0.5</span>
+      <span class="badge">향후 지속 갱신용</span>
+    </div>
+  </div>
+</header>
+
+<nav>
+<div class="wrap">
+  <a href="#profile">기본정보</a><a href="#scenarios">입학 시나리오</a><a href="#schools">학교 후보</a><a href="#housing">주거·생활권</a>
+  <a href="#activities">클라리넷·야구</a><a href="#routine">생활동선</a><a href="#application">지원·비자</a><a href="#cost">비용</a><a href="#timeline">실행계획</a>
+  <a href="#korea">한국 복귀</a><a href="#university">대학진학</a><a href="#checklist">체크리스트</a><a href="#sources">공식자료</a>
+</div>
+</nav>
+
+<main class="wrap">
+
+<section id="profile">
+<h2>1. 학생 및 가족 기본정보</h2>
+<div class="grid">
+  <div class="card">
+    <h3>학생</h3>
+    <p><b>출생:</b> 2014년 5월생 남자아이</p>
+    <p><b>현재 영어:</b> DYB 최선어학원 Poseidon 반 수강</p>
+    <p><b>음악:</b> 클라리넷 개인 학습 경험</p>
+    <p><b>스포츠:</b> 야구아카데미 취미반 선수 활동</p>
+  </div>
+  <div class="card">
+    <h3>유학 기본방향</h3>
+    <p><b>도시:</b> Brisbane 우선</p>
+    <p><b>보호자:</b> 엄마 동행, 현지 생활 기반 구축</p>
+    <p><b>시작 시기:</b> 2027년 하반기 또는 2028년</p>
+    <p><b>장기 전략:</b> 호주 대학 진학과 한국 복귀 후 국내대학 진학을 모두 열어 둠</p>
+  </div>
+</div>
+<div class="note good"><b>프로젝트 원칙:</b> 학교 선택은 학업성취도만 보지 않고 영어 적응, 생활권, 통학, 음악·스포츠, 귀국 가능성, 대학진학 경로를 함께 판단한다.</div>
+</section>
+
+<section id="scenarios">
+<h2>2. 핵심 입학 시나리오</h2>
+<p>Queensland 주립학교는 1년을 4개 Term으로 운영한다. 2027년과 2028년의 공식 Term 일정은 Queensland Department of Education이 공표했다.</p>
+
+<table>
+<thead><tr><th>시나리오</th><th>입학 경로</th><th>핵심 의미</th><th>현재 검토 포인트</th></tr></thead>
+<tbody>
+<tr><td><b>A</b></td><td>2027 Term 3 정규과정</td><td>2027년 7월부터 빠르게 적응</td><td>Academic English가 정규수업 가능한 수준인지</td></tr>
+<tr><td><b>B</b></td><td>2027 Term 3 HSP → 2028 Term 1 정규</td><td>2027 하반기를 영어·교과 적응기로 사용</td><td>2027 영어진단 결과에 따라 매우 유력</td></tr>
+<tr><td><b>C</b></td><td>2027 Term 4 정규 → 2028 Term 1 새 학년</td><td>약 10주를 사전 적응학기로 활용</td><td>한국 중1을 더 다닌 뒤 이동 가능</td></tr>
+<tr><td><b>D</b></td><td>2028 Term 1 정규과정</td><td>호주 새 학년 첫날부터 출발</td><td>학교생활 시작은 가장 깔끔</td></tr>
+</tbody>
+</table>
+
+<h3>공식 Term 일정</h3>
+<div class="grid">
+<div class="card"><div class="kpi">2027</div>
+<p>T1: 1/27–3/25<br>T2: 4/12–6/25<br><b>T3: 7/12–9/17</b><br><b>T4: 10/5–12/10</b></p></div>
+<div class="card"><div class="kpi">2028</div>
+<p><b>T1: 1/24–3/31</b><br>T2: 4/18–6/23<br>T3: 7/10–9/15<br>T4: 10/3–12/8</p></div>
+</div>
+
+<div class="note"><b>HSP:</b> EQI High School Preparation은 1월·4월·7월·10월 각 Term 시작 때 입학 가능하다. 영어로 교과를 공부한 경험이 없다면 EQI는 대체로 약 2 Terms의 HSP가 필요할 수 있다고 안내한다.</div>
+</section>
+
+<section id="schools">
+<h2>3. 주후보 학교 3곳</h2>
+<div class="filters">
+<button class="active" onclick="filterSchool('all',this)">전체</button>
+<button onclick="filterSchool('sunnybank',this)">Sunnybank</button>
+<button onclick="filterSchool('whiteshill',this)">Whites Hill</button>
+<button onclick="filterSchool('indooroopilly',this)">Indooroopilly</button>
+</div>
+
+<div class="school-card" data-school="sunnybank">
+<h3>Sunnybank State High School</h3>
+<p><span class="tag green">HS</span><span class="tag green">HSA</span><span class="tag blue">Instrumental Music</span><span class="tag">국제학생 지원</span></p>
+<ul>
+<li>50개 이상의 문화적 배경을 가진 학생을 지원하는 국제학생 전담 체계.</li>
+<li>International Academic Support, Academic Coaching, Homework Program 등 지원.</li>
+<li>Instrumental Music 운영. 클라리넷을 학교 음악활동에 연결할 수 있는 후보.</li>
+<li>생활 측면에서는 아시아계 상권과 생활 인프라 접근성이 좋아 초기 정착이 상대적으로 쉬운 편.</li>
+</ul>
+<p><b>현재 역할:</b> 생활 안정형·균형형 기준 후보.</p>
+</div>
+
+<div class="school-card" data-school="whiteshill">
+<h3>Whites Hill State College</h3>
+<p><span class="tag green">HS</span><span class="tag orange">HSP</span><span class="tag green">HSA</span><span class="tag blue">Instrumental Music</span></p>
+<ul>
+<li>브리즈번 HSP 운영 3개 학교 중 하나.</li>
+<li>국제학생 literacy 프로그램과 specialist English teachers의 intensive English 지원.</li>
+<li>Prep–Year 12 통합 캠퍼스.</li>
+<li>음악·스포츠 활동 가능. Camp Hill/Carina 생활권과 묶어 야구클럽 접근성을 함께 검토하기 좋음.</li>
+</ul>
+<p><b>현재 역할:</b> 2027 출국 시 영어 적응 안전형 후보.</p>
+</div>
+
+<div class="school-card" data-school="indooroopilly">
+<h3>Indooroopilly State High School</h3>
+<p><span class="tag green">HS</span><span class="tag orange">HSP</span><span class="tag green">HSA</span><span class="tag blue">IB</span><span class="tag blue">Music Acceleration</span></p>
+<ul>
+<li>IB World School, UQ 등 대학 연계 경로.</li>
+<li>모든 교과 영역에서 EAL/D 영어지원.</li>
+<li>Music Acceleration 및 choir, concert/stage/strings/percussion/brass bands 운영.</li>
+<li>HSP와 정규과정을 같은 학교 안에서 연결할 수 있음.</li>
+<li>학업·음악 확장성은 가장 크지만 주거비와 야구 이동 동선은 더 면밀히 확인할 필요.</li>
+</ul>
+<p><b>현재 역할:</b> 장기 학업·음악 확장형 후보.</p>
+</div>
+
+<div class="note warn"><b>중요:</b> 학교 프로그램, 특정 과목, 스포츠·음악 활동은 입학 연도에 변경될 수 있으므로 실제 지원 전 학교/EQI에 2027·2028 제공 여부를 다시 확인한다.</div>
+</section>
+
+<section id="activities">
+<h2>4. 클라리넷·야구를 학교 적응에 활용하는 전략</h2>
+<div class="grid">
+<div class="card">
+<h3>클라리넷</h3>
+<p>학교 Instrumental Music, Concert Band, Wind Band, Orchestra 등으로 연결한다.</p>
+<ul>
+<li>영어가 완벽하지 않아도 기존 기술로 또래 집단에 들어가기 쉬움.</li>
+<li>출국 전까지 개인레슨을 유지하고 가능하면 합주 경험을 추가.</li>
+<li>학교 입학 직후 음악 담당 교사에게 기존 학습기간과 연주 수준을 전달.</li>
+</ul>
+</div>
+<div class="card">
+<h3>야구</h3>
+<p>학교 자체 야구팀보다 지역 Junior Baseball Club을 병행하는 구조를 기본안으로 한다.</p>
+<ul>
+<li>Sunnybank/Runcorn, Camp Hill/Carina, Indooroopilly 서부권 클럽을 생활권과 함께 비교.</li>
+<li>훈련과 경기에서 자연스러운 현장 영어 사용.</li>
+<li>호주 도착 초기 친구집단을 학교 외부에서도 확보.</li>
+</ul>
+</div>
+</div>
+<div class="note good"><b>적응 전략:</b> “영어가 서툰 국제학생”만으로 시작하지 않고 “클라리넷 하는 친구”, “야구 하는 친구”라는 역할을 처음부터 만든다.</div>
+<p class="small">대학입시에서는 활동 자체가 자동 가산점이 되는 것으로 보지 않는다. 장기간의 지속성, 리더십, 공연·대표선발, 장학금 및 특정 전형과의 연관성은 대학/전형별로 별도 확인한다.</p>
+</section>
+
+
+
+<section id="housing">
+<h2>5. 실제 거주 후보 · 월 생활비 시뮬레이션 v0.3</h2>
+
+<div class="note good">
+<b>원화 환산 기준:</b> 2026-09-17 기준 A$1 = ₩983.48.<br>
+모든 원화 금액은 비교를 위한 현재환율 환산값이다. 실제 2027~2028년 입주 시 렌트와 환율은 달라질 수 있으며, 실제 송금·카드결제에는 수수료와 적용환율 차이가 발생한다.
+</div>
+
+<h3>5-1. 세 학교권 실제 거주 후보</h3>
+<table>
+<thead><tr><th>학교권</th><th>거주 후보</th><th>현재 2BR 유닛 중앙값</th><th>월 환산</th><th>현재환율 한화/월</th><th>생활 판단</th></tr></thead>
+<tbody>
+<tr><td rowspan="3"><b>Sunnybank SHS</b></td>
+<td><b>Sunnybank</b></td><td>A$520/wk</td><td>A$2,253</td><td>약 222만원</td>
+<td>학교와 생활 인프라를 가장 단순하게 묶는 기준안. 아시아 식품·외식 접근성이 강점.</td></tr>
+<tr><td>Robertson</td><td>A$580/wk</td><td>A$2,513</td><td>약 247만원</td>
+<td>Sunnybank 인접. 2BR 매물 표본이 적어 실제 매물 확인 필요.</td></tr>
+<tr><td>Macgregor</td><td>A$600/wk</td><td>A$2,600</td><td>약 256만원</td>
+<td>Garden City/Upper Mt Gravatt 생활권 접근은 좋지만 Sunnybank보다 렌트가 높음.</td></tr>
+
+<tr><td rowspan="3"><b>Whites Hill SC</b></td>
+<td><b>Camp Hill</b></td><td>A$540/wk</td><td>A$2,340</td><td>약 230만원</td>
+<td>학교 중심으로 가장 직접적인 거주 후보. Carina 야구 활동도 연결하기 좋음.</td></tr>
+<tr><td>Carina</td><td>A$630/wk</td><td>A$2,730</td><td>약 268만원</td>
+<td>야구·쇼핑 생활권과 결합하기 좋지만 Camp Hill보다 현재 렌트가 높음.</td></tr>
+<tr><td>Carina Heights</td><td>A$630/wk</td><td>A$2,730</td><td>약 268만원</td>
+<td>가족 주거환경 후보. 차량 생활을 전제로 보면 검토 가치가 있음.</td></tr>
+
+<tr><td rowspan="3"><b>Indooroopilly SHS</b></td>
+<td><b>Indooroopilly</b></td><td>A$700/wk</td><td>A$3,033</td><td>약 298만원</td>
+<td>학교·역·Westfield를 한 생활권으로 묶기 가장 쉬움. 차 없이 시작하기 가장 유리.</td></tr>
+<tr><td>Taringa</td><td>A$650/wk</td><td>A$2,817</td><td>약 277만원</td>
+<td>Indooroopilly와 Toowong 사이. 철도 접근과 주거비 절충안.</td></tr>
+<tr><td>Toowong</td><td>약 A$680~690/wk</td><td>약 A$2,968</td><td>약 292만원</td>
+<td>대중교통·상업시설 강점. 학교까지는 이동이 추가되지만 생활편의가 높음.</td></tr>
+</tbody>
+</table>
+
+<p class="small">
+렌트는 realestate.com.au 최근 12개월 2-bedroom unit 자료 기준. 실제 계약 시점의 신규 매물, 주차공간, 가구 포함 여부, 에어컨, 건물연식에 따라 차이가 크다.
+</p>
+
+<h3>5-2. 엄마+아이 월 생활비 기준안</h3>
+<p>아래는 <b>학비와 HSP를 제외한 생활비</b>다. 현재 계획 단계에서 비교하기 위한 예산값이며 공식 최저생계비가 아니다.</p>
+<table>
+<thead><tr><th>항목</th><th>월 예산(A$)</th><th>현재환율 한화</th><th>산정 방식</th></tr></thead>
+<tbody>
+<tr><td>식비·생활용품</td><td>A$1,200</td><td>약 118만원</td><td>엄마+중학생, 외식 과다 제외한 중간 수준</td></tr>
+<tr><td>전기·가스·수도 관련 부담</td><td>A$300</td><td>약 30만원</td><td>계절·임대조건에 따라 변동</td></tr>
+<tr><td>인터넷+휴대전화 2회선</td><td>A$150</td><td>약 15만원</td><td>중간 요금제 예산</td></tr>
+<tr><td>대중교통</td><td>A$80</td><td>약 8만원</td><td>현재 Translink 50센트 정액요금 반영한 여유 예산</td></tr>
+<tr><td>학교 부대비 평균화</td><td>A$200</td><td>약 20만원</td><td>교복·교재·활동비 등을 월평균으로 가정</td></tr>
+<tr><td>보험·일반 의료 여유분</td><td>A$250</td><td>약 25만원</td><td>실제 비자 보험상품 확정 후 수정</td></tr>
+<tr><td>의류·여가·잡비</td><td>A$500</td><td>약 49만원</td><td>가족활동 포함 여유 예산</td></tr>
+<tr><td><b>렌트 제외 합계</b></td><td><b>A$2,680</b></td><td><b>약 264만원</b></td><td>차량 미보유 기준</td></tr>
+</tbody>
+</table>
+
+<div class="note">
+<b>현재 Translink 요금:</b> Queensland 대부분의 버스·기차·페리 등은 1회 A$0.50 정액(공항 Airtrain, 일부 전용 스쿨버스 제외). 따라서 대중교통 접근성이 좋은 Indooroopilly/Taringa/Toowong은 차량 없이 시작할 때 비용상 이점이 매우 크다.
+</div>
+
+<h3>5-3. 지역별 월 총생활비 — 차량 없음</h3>
+<table>
+<thead><tr><th>기준 거주지</th><th>렌트/월</th><th>기타 생활비</th><th>월 합계(A$)</th><th>현재환율 한화/월</th><th>연 생활비</th></tr></thead>
+<tbody>
+<tr><td><b>Sunnybank</b></td><td>A$2,253</td><td>A$2,680</td><td><b>A$4,933</b></td><td><b>약 485만원</b></td><td>A$59,200 / 약 5,822만원</td></tr>
+<tr><td><b>Camp Hill</b></td><td>A$2,340</td><td>A$2,680</td><td><b>A$5,020</b></td><td><b>약 494만원</b></td><td>A$60,240 / 약 5,924만원</td></tr>
+<tr><td><b>Indooroopilly</b></td><td>A$3,033</td><td>A$2,680</td><td><b>A$5,713</b></td><td><b>약 562만원</b></td><td>A$68,560 / 약 6,743만원</td></tr>
+
+</tbody>
+</table>
+
+<h3>5-4. 차량을 보유할 경우</h3>
+<p>차량 구입가격은 제외하고, 등록·보험·연료·정비를 합쳐 <b>월 A$750</b> 예산으로 가정한다. 실제 차종·주행거리·보험료에 따라 크게 달라진다.</p>
+<table>
+<thead><tr><th>기준 거주지</th><th>월 합계(A$)</th><th>현재환율 한화/월</th><th>차량 없음 대비</th></tr></thead>
+<tbody>
+<tr><td><b>Sunnybank</b></td><td><b>A$5,603</b></td><td><b>약 551만원</b></td><td>월 +A$670 / 약 66만원</td></tr>
+<tr><td><b>Camp Hill</b></td><td><b>A$5,690</b></td><td><b>약 560만원</b></td><td>월 +A$670 / 약 66만원</td></tr>
+<tr><td><b>Indooroopilly</b></td><td><b>A$6,383</b></td><td><b>약 628만원</b></td><td>월 +A$670 / 약 66만원</td></tr>
+
+</tbody>
+</table>
+
+<h3>5-5. 첫해 총예산 감 잡기 — 학비 포함</h3>
+<p>아래는 <b>차량 구입비, 비자 수수료, 항공, 보증금, 가구·생활용품 초기구입비는 제외</b>한 값이다.</p>
+<table>
+<thead><tr><th>기준안</th><th>연 생활비</th><th>2027 정규학비</th><th>합계</th><th>현재환율 한화</th></tr></thead>
+<tbody>
+<tr><td><b>Sunnybank / 차 없음</b></td><td>A$59,200</td><td>A$17,176</td><td><b>A$76,376</b></td><td><b>약 7,511만원</b></td></tr>
+<tr><td><b>Camp Hill / 차 있음</b></td><td>A$68,280</td><td>A$17,176</td><td><b>A$85,456</b></td><td><b>약 8,404만원</b></td></tr>
+<tr><td><b>Indooroopilly / 차 없음</b></td><td>A$68,560</td><td>A$17,176</td><td><b>A$85,736</b></td><td><b>약 8,432만원</b></td></tr>
+
+<tr><td><b>HSP 20주 추가 시</b></td><td colspan="2">위 각 안에 A$10,480 추가</td><td>+A$10,480</td><td><b>+약 1,031만원</b></td></tr>
+</tbody>
+</table>
+
+<div class="note warn">
+<b>첫해 별도 정착비:</b> 임대 보증금(bond), 선불 렌트, 항공권, 비자·검진, 가구·침구·주방용품, 중고차 구입 등을 따로 잡아야 한다.
+따라서 위 표를 “최종 총액”으로 보지 않고, <b>반복적으로 발생하는 생활비+학비의 기준선</b>으로 사용한다.
+</div>
+
+<h3>5-6. 현재 생활권 판단</h3>
+<div class="grid3">
+<div class="card"><h3>Sunnybank</h3><p><b>정착 편의 우선</b></p><p>주거비가 낮고 생활 인프라가 강하다. 대중교통만으로도 가능하지만 클라리넷·야구 활동을 함께 굴리면 차량이 편하다.</p></div>
+<div class="card"><h3>Camp Hill / Whites Hill</h3><p><b>학교+야구 동선 우선</b></p><p>Whites Hill HSP/정규과정과 Carina권 야구를 묶는 구조가 장점. 실제 일상에서는 차량의 가치가 가장 높다.</p></div>
+<div class="card"><h3>Indooroopilly</h3><p><b>차 없는 생활+학업 확장성</b></p><p>렌트는 가장 비싸지만 역·버스·Westfield 생활권 때문에 차량을 늦게 구입할 수 있다. 음악 활동까지 학교 안에서 해결하기 좋다.</p></div>
+</div>
+
+<h3>5-7. 다음 확인 항목</h3>
+<ul>
+<li>각 학교 실제 국제학생 입학 시 통학/거주 요건과 홈스테이·보호자 동거 관련 조건</li>
+<li>학교에서 도보/버스 20분 내 실제 2BR 매물 5~10개 표본</li>
+<li>주차 1대 포함 여부와 차량이 있을 때 렌트 상승폭</li>
+<li>야구클럽 훈련 요일·시즌·회비 및 아이의 2027/2028 연령그룹</li>
+<li>클라리넷 Instrumental Music 실제 신청 시기·오디션·악기 대여료</li>
+</ul>
+</section>
+
+
+
+<section id="routine">
+<h2>6. 학교·음악·야구를 묶은 실제 생활동선 v0.4</h2>
+
+<div class="note good">
+<b>이번 단계의 기준:</b> 정확한 집 주소가 아직 없으므로 “통학 20분 이내”를 확정값으로 쓰지 않고,
+<b>학교 중심 20분 생활권을 목표로 한 후보 구역</b>으로 관리한다.
+실제 임대계약 직전에는 후보 매물 주소를 Translink Journey Planner와 차량 경로로 다시 검증한다.
+</div>
+
+<h3>6-1. Sunnybank 생활권</h3>
+<div class="grid">
+<div class="card">
+<h3>학교·교통</h3>
+<p><b>Sunnybank State High School</b><br>Boorman Street, Sunnybank QLD 4109</p>
+<p>Sunnybank 역이 Beenleigh 계열 철도 서비스를 제공한다. 학교와 역·쇼핑권을 동시에 잡을 수 있는 집을 우선 찾는다.</p>
+<p><b>거주 우선순위:</b> Sunnybank 중심 → Robertson → Macgregor</p>
+</div>
+<div class="card">
+<h3>야구</h3>
+<p><b>Indians Baseball Club</b><br>Wakerley Park, 65 Dew Street, Runcorn QLD 4113</p>
+<p>주니어부터 성인까지 운영하며 2026/27 Summer Season은 10월 시작. Baseball Queensland의 10~14세 Spring Training도 이 구장에서 운영됐다.</p>
+<p><b>아이 연령 적합성:</b> 2027~2028년 13~14세이므로 주니어 연령대와 자연스럽게 맞는다.</p>
+</div>
+</div>
+
+<h4>권장 주중 루틴</h4>
+<table>
+<thead><tr><th>요일 예시</th><th>활동</th><th>이동 전략</th></tr></thead>
+<tbody>
+<tr><td>월</td><td>학교 → 귀가</td><td>적응 초기에는 방과후 일정 최소화</td></tr>
+<tr><td>화/수 중 1일</td><td>학교 Instrumental Music / Band</td><td>학교 안에서 해결</td></tr>
+<tr><td>평일 1~2회</td><td>Indians Baseball 훈련</td><td>Runcorn 이동. 차량이 있으면 편의성이 크게 올라감</td></tr>
+<tr><td>토요일</td><td>Junior Baseball 경기 가능성</td><td>시즌 일정에 따라 이동</td></tr>
+</tbody>
+</table>
+
+<h3>6-2. Whites Hill / Camp Hill 생활권</h3>
+<div class="grid">
+<div class="card">
+<h3>학교·영어·음악</h3>
+<p><b>Whites Hill State College</b><br>Camp Hill 생활권</p>
+<p>HSP와 정규과정을 같은 학교에서 연결할 수 있는 것이 가장 큰 장점. Instrumental Music에서 Woodwind 계열을 운영하며 클라리넷 연결이 가능하다.</p>
+<p><b>거주 우선순위:</b> Camp Hill → Carina → Carina Heights</p>
+</div>
+<div class="card">
+<h3>야구</h3>
+<p><b>Carina Red Sox Baseball Club</b><br>56 Zahel Street, Carina QLD 4152</p>
+<p>Whites Hill/Camp Hill과 같은 동남부 생활권에 있어 학교-집-야구를 가장 짧은 생활반경으로 묶기 쉬운 조합이다.</p>
+</div>
+</div>
+
+<h4>권장 주중 루틴</h4>
+<table>
+<thead><tr><th>요일 예시</th><th>활동</th><th>이동 전략</th></tr></thead>
+<tbody>
+<tr><td>월~금</td><td>HSP 또는 정규수업</td><td>학교 적응을 최우선</td></tr>
+<tr><td>학교 전/후 주 1회 이상</td><td>Instrumental Music / Ensemble</td><td>학교 안에서 해결</td></tr>
+<tr><td>평일 1~2회</td><td>Carina Red Sox 훈련</td><td>차량 생활 시 가장 효율적인 구조</td></tr>
+<tr><td>주말</td><td>야구 경기 + 가족 장보기</td><td>Carina/Carindale 생활권과 결합</td></tr>
+</tbody>
+</table>
+
+<h3>6-3. Indooroopilly 생활권</h3>
+<div class="grid">
+<div class="card">
+<h3>학교·대중교통</h3>
+<p><b>Indooroopilly State High School</b><br>111 Ward Street, Indooroopilly QLD 4068</p>
+<p>Moggill Rd의 학교 앞 정류장에는 425, 432, 433, 435, 444, 445, 453, 454, 460 등 여러 노선이 운행한다. Indooroopilly 역과 Shopping Centre 버스환승도 이용 가능하다.</p>
+<p><b>거주 우선순위:</b> Indooroopilly → Taringa → Toowong</p>
+</div>
+<div class="card">
+<h3>야구</h3>
+<p><b>Western Districts Baseball Club (Wests Bulldogs)</b><br>Atthows Park, 59 Westcombe Street, Darra QLD 4076</p>
+<p>T-ball부터 Juniors, Seniors까지 이어지는 클럽. 2026/27 시즌에도 주니어 등록을 받았고, Come & Try는 8월에 진행됐다.</p>
+</div>
+</div>
+
+<h4>권장 주중 루틴</h4>
+<table>
+<thead><tr><th>요일 예시</th><th>활동</th><th>이동 전략</th></tr></thead>
+<tbody>
+<tr><td>월</td><td>학교 → 귀가</td><td>대중교통만으로도 충분히 가능</td></tr>
+<tr><td>주 1회</td><td>Woodwind lesson</td><td>수업시간 중 학교에서 진행</td></tr>
+<tr><td>주 1회 이상</td><td>Concert Band / 상위 Ensemble</td><td>점심 또는 방과전·방과후 학교 내 활동</td></tr>
+<tr><td>평일/주말</td><td>Wests Baseball</td><td>Darra 이동. 야구를 본격적으로 병행하면 차량 가치가 커짐</td></tr>
+</tbody>
+</table>
+
+<div class="note">
+<b>Indooroopilly 음악 강점:</b> Junior Secondary용 Concert Band부터 Symphony Orchestra까지 이어지는 구조가 확인된다.
+Instrumental Music은 Woodwind, Brass, Percussion, Strings 수업을 학교시간에 제공하고,
+ensemble 참여는 프로그램의 필수 요소다.
+</div>
+
+<h3>6-4. 세 지역의 실제 생활형 비교</h3>
+<table>
+<thead><tr><th>항목</th><th>Sunnybank</th><th>Whites Hill / Camp Hill</th><th>Indooroopilly</th></tr></thead>
+<tbody>
+<tr><td>학교 적응</td><td>다문화·국제학생 친화</td><td>HSP 연결이 가장 실용적</td><td>EAL/D + 장기 학업확장</td></tr>
+<tr><td>클라리넷</td><td>학교 Instrumental Music 연계</td><td>Woodwind/Clarinet 연계</td><td>Concert Band → Symphony Orchestra 확장성</td></tr>
+<tr><td>야구</td><td>Runcorn Indians</td><td>Carina Red Sox</td><td>Wests Bulldogs, Darra</td></tr>
+<tr><td>집-야구 동선</td><td>좋음</td><td><b>가장 단순</b></td><td>가장 길어질 가능성</td></tr>
+<tr><td>차량 의존도</td><td>중간~높음</td><td><b>높음</b></td><td>학교생활은 낮음 / 야구 포함 시 중간~높음</td></tr>
+<tr><td>대중교통 생활</td><td>가능</td><td>버스 중심</td><td><b>가장 유리</b></td></tr>
+<tr><td>2027 T3 HSP안</td><td>별도 HSP 경로 고려</td><td><b>특히 적합</b></td><td>적합</td></tr>
+<tr><td>2028 T1 정규안</td><td>안정적</td><td>안정적</td><td><b>확장성 큼</b></td></tr>
+</tbody>
+</table>
+
+<h3>6-5. 출국 시점별 추천 운영방식</h3>
+<div class="grid">
+<div class="card">
+<h3>2027 T3 / T4 출국</h3>
+<p>처음 3~6개월은 <b>학교 적응 + 클라리넷 + 야구 1개 클럽</b>만 유지한다. 별도 영어·수학 학원은 아이의 실제 적응상태를 본 뒤 추가한다.</p>
+<p>Academic English가 부족하면 Whites Hill 또는 Indooroopilly HSP 경로의 가치가 커진다.</p>
+</div>
+<div class="card">
+<h3>2028 T1 출국</h3>
+<p>한국에서 2027년 동안 Academic English를 충분히 준비해 정규과정 직접 진입을 우선 목표로 한다.</p>
+<p>이 경우 Indooroopilly의 학업·음악 확장성과 Sunnybank의 생활 안정성을 직접 비교하기 좋다.</p>
+</div>
+</div>
+
+<h3>6-6. 클라리넷 신청 타이밍 관리</h3>
+<ul>
+<li>정규 입학 확정 후 바로 학교의 Instrumental Music 담당자에게 한국에서의 클라리넷 학습기간·교재·합주경험을 전달.</li>
+<li>학년 중간 입학이면 빈 자리와 ensemble 배정 가능 여부를 입학 전에 문의.</li>
+<li>Indooroopilly는 Instrumental Music ensemble 참여가 프로그램의 필수 요소이므로, 입학과 동시에 상담하는 것이 좋다.</li>
+<li>2027/2028 실제 신청서·오디션·악기 대여비는 해당 연도 안내가 나오면 갱신.</li>
+</ul>
+
+<h3>6-7. 야구 가입 타이밍 관리</h3>
+<ul>
+<li>Brisbane 야구는 여름시즌 중심이므로 7~8월의 Come & Try/등록 공지를 우선 확인.</li>
+<li>Indians는 2026/27 Summer Season을 10월에 시작했고, Wests는 2026년 8월 Come & Try 후 시즌 등록을 열었다.</li>
+<li>2027 T3 입국이면 입국 직후 야구클럽 체험·등록 준비가 가능한 좋은 타이밍이 될 수 있다.</li>
+<li>2027 T4 또는 2028 T1 입국이면 시즌 중간 합류 가능 여부를 클럽에 직접 확인해야 한다.</li>
+</ul>
+
+<div class="note warn">
+<b>아직 확정하지 않은 것:</b> “집에서 학교까지 정확히 12분”, “매주 화요일 야구훈련”처럼 주소·시즌별로 달라지는 정보는 고정하지 않았다.
+실제 입학 확정 후 후보 매물 주소와 해당 시즌 클럽 시간표를 대입해 최종 생활동선을 만든다.
+</div>
+</section>
+
+
+<section id="application">
+<h2>7. EQI 지원 · 비자 · 출국 실행 절차 v0.5</h2>
+
+<div class="note good">
+<b>핵심 구조:</b> 학교를 먼저 고르고 → EQI에 국제학생 지원 → 학교 배정/오퍼 → Enrolment Agreement·Statement of Fees 확인 및 요구금액 납부 → Confirmation of Enrolment(CoE) 발급 → 아이 Student visa (Subclass 500)와 엄마 Student Guardian visa (Subclass 590) 신청 → 승인 후 주거·한국 학적·출국을 확정한다.
+</div>
+
+<h3>7-1. 전체 절차</h3>
+<table>
+<thead><tr><th>단계</th><th>해야 할 일</th><th>우리 가족 기준 핵심</th></tr></thead>
+<tbody>
+<tr><td><b>1. 학교·프로그램 선택</b></td><td>Sunnybank / Whites Hill / Indooroopilly 및 HSP 여부 결정</td><td>DYB 영어 진단 결과가 HSP 여부를 결정하는 핵심 자료</td></tr>
+<tr><td><b>2. EQI 신청 준비</b></td><td>EQI 학생 신청서 및 요구서류 제출</td><td>희망 시작 Term과 학교를 명확히 기재하고, 완전한 신청서를 마감 전에 제출</td></tr>
+<tr><td><b>3. Placement 심사</b></td><td>EQI와 학교가 자리·학년·프로그램 적합성 확인</td><td>희망 학교가 만석이면 대체학교가 필요할 수 있으므로 2~3순위 유지</td></tr>
+<tr><td><b>4. Offer / Enrolment Agreement</b></td><td>오퍼와 비용·조건 확인</td><td>정규과정인지 HSP 패키지인지 확인하고, 학비·비학비 항목 검토</td></tr>
+<tr><td><b>5. 비용 납부 및 CoE</b></td><td>요구되는 초기 비용을 납부하고 CoE 발급</td><td>CoE는 학생비자 신청의 핵심 서류</td></tr>
+<tr><td><b>6. 비자 신청</b></td><td>아이 Subclass 500 + 엄마 Subclass 590</td><td>미성년 학생의 보호자로 엄마가 동행하므로 두 신청을 같은 시기에 준비하는 구조가 적합</td></tr>
+<tr><td><b>7. 건강·재정·보호자 증빙</b></td><td>ImmiAccount 요구서류에 따라 추가자료 제출</td><td>재정증빙, 가족관계, 건강검진, 보호자 관련 요구사항을 최신 체크리스트로 확인</td></tr>
+<tr><td><b>8. 비자 승인 후 출국 확정</b></td><td>항공·주거·보험·학교 오리엔테이션·한국 학적 처리</td><td>비자 승인 전 비환불 조건이 큰 계약은 신중하게 진행</td></tr>
+</tbody>
+</table>
+
+<h3>7-2. 2027/2028 EQI 공식 신청 마감</h3>
+<table>
+<thead><tr><th>입학 시나리오</th><th>신청 오픈</th><th>신청 마감</th><th>학업 시작</th><th>우리 계획</th></tr></thead>
+<tbody>
+<tr><td><b>2027 Term 3</b></td><td>2026-06-16</td><td><b>2027-02-12</b></td><td>2027-07-12</td><td>2026년 말까지 학교·영어 경로를 사실상 확정하는 것이 안전</td></tr>
+<tr><td><b>2027 Term 4</b></td><td>2026-10-05</td><td><b>2027-04-11</b></td><td>2027-10-05</td><td>2027년 초까지 영어진단 후 정규/HSP 방향 결정</td></tr>
+<tr><td><b>2028 Term 1</b></td><td>2026-11-02</td><td><b>2027-07-25</b></td><td>2028-01-24</td><td>시간 여유가 가장 크며 2027 상반기까지 준비 가능</td></tr>
+<tr><td>2028 Term 2</td><td>2027-04-12</td><td>2027-10-03</td><td>2028-04-18</td><td>예비 대안</td></tr>
+</tbody>
+</table>
+
+<div class="note warn">
+<b>HSP/EPP 패키지 주의:</b> EQI는 HSP 또는 English Pathway Provider 과정과 High School을 패키지로 신청하는 경우,
+HSP 시작일 최소 14주 전에 완전한 신청서를 받을 것을 요구한다. 일반 Term 마감만 보고 늦게 준비하면 안 된다.
+</div>
+
+<h3>7-3. 우리 가족의 권장 준비시점</h3>
+<div class="grid">
+<div class="card">
+<h3>2027 T3 목표</h3>
+<p><b>2026년 10~12월:</b> 영어자료 진단, 주후보 3개 학교 비교 완료</p>
+<p><b>2027년 1월:</b> 정규/HSP 경로 결정, 신청서류 완성</p>
+<p><b>늦어도 2027-02-12 전:</b> EQI 완전신청 제출</p>
+<p><b>이후:</b> Offer → 비용납부 → CoE → 500/590 비자</p>
+</div>
+<div class="card">
+<h3>2027 T4 목표</h3>
+<p><b>2027년 1~2월:</b> 영어 수준 재평가</p>
+<p><b>2027년 3월:</b> 학교·프로그램 최종선택</p>
+<p><b>늦어도 2027-04-11 전:</b> EQI 신청</p>
+<p><b>여름:</b> 비자·주거·한국 학적 준비</p>
+</div>
+<div class="card">
+<h3>2028 T1 목표</h3>
+<p><b>2027년 상반기:</b> Academic English 집중 준비</p>
+<p><b>2027년 5~6월:</b> 학교·정규진입 가능성 최종 점검</p>
+<p><b>늦어도 2027-07-25 전:</b> EQI 신청</p>
+<p><b>하반기:</b> 비자·주거·출국 준비</p>
+</div>
+</div>
+
+<h3>7-4. EQI 신청서류 관리 목록</h3>
+<p>정확한 요구서류는 실제 신청시점의 EQI 신청서와 가이드가 우선이다. 아래는 프로젝트 관리용 기본 체크리스트다.</p>
+<ul>
+<li>여권 사본</li>
+<li>최근 학교 성적표·재학 관련 서류</li>
+<li>영어 관련 자료가 요구되는 경우 해당 결과</li>
+<li>희망 학교 및 희망 시작 Term</li>
+<li>보호자 및 비상연락 정보</li>
+<li>필요 시 이전 학교의 추가 학업자료</li>
+<li>HSP를 선택할 경우 HSP+High School 패키지 조건 확인</li>
+</ul>
+
+<h3>7-5. 아이 Student visa (Subclass 500)</h3>
+<ul>
+<li>학교 Student visa는 Subclass 500으로 신청한다.</li>
+<li>CoE 및 ImmiAccount에서 요구하는 증빙서류를 준비한다.</li>
+<li>현재 Home Affairs 페이지상 Student visa 기본 신청비는 A$2,000부터이며, 실제 납부액은 신청시점의 Visa Pricing Estimator로 다시 확인한다.</li>
+<li>미성년 학생이므로 복지·보호자(welfare) arrangements가 반드시 충족되어야 한다.</li>
+</ul>
+
+<h3>7-6. 엄마 Student Guardian visa (Subclass 590)</h3>
+<ul>
+<li>Subclass 590은 Student visa를 가진 미성년 학생을 돌보기 위한 보호자 비자다.</li>
+<li>Home Affairs는 590 보호자가 일반적으로 학생과 함께 거주하며 적절한 accommodation, support, welfare를 제공해야 한다고 안내한다.</li>
+<li>학생의 보호자로 590을 신청하는 경우 Home Affairs는 학생 500과 보호자 590 신청을 같은 시기에 제출하도록 안내한다.</li>
+<li>재정능력과 건강보험·건강요건 등은 실제 신청 당시의 공식 체크리스트를 따라야 한다.</li>
+</ul>
+
+<div class="note warn">
+<b>엄마의 현지 취업:</b> 이 프로젝트의 비용계획은 엄마의 호주 현지 근로소득을 0원으로 잡는다.
+590은 학생 돌봄 목적의 비자이므로 취업을 전제로 생활비를 설계하지 않는다.
+</div>
+
+<h3>7-7. 학생 보험과 의료</h3>
+<ul>
+<li>Student visa 학생은 요구되는 건강보험 조건을 충족해야 한다.</li>
+<li>EQI가 보험을 준비하는 경우 해당 non-tuition fee가 Statement of Fees에 포함될 수 있다.</li>
+<li>엄마의 보험은 590 비자조건과 실제 상품을 별도로 확인해 학생 보험과 분리해서 예산화한다.</li>
+</ul>
+
+<h3>7-8. 비자 승인 후 한국에서 해야 할 일</h3>
+<table>
+<thead><tr><th>분야</th><th>실행항목</th></tr></thead>
+<tbody>
+<tr><td>학교</td><td>한국 중학교 학적처리, 재학/성적/출결 관련 서류 확보</td></tr>
+<tr><td>주거</td><td>실제 매물 주소 기준 학교 통학·대중교통·야구장 이동 재검증</td></tr>
+<tr><td>음악</td><td>학교 Instrumental Music 담당자에게 클라리넷 경력 및 합주경험 전달</td></tr>
+<tr><td>야구</td><td>해당 시즌 Junior Baseball 등록/체험 일정 확인</td></tr>
+<tr><td>금융</td><td>초기 생활비, 카드, 송금 방식, 현지 은행계좌 준비</td></tr>
+<tr><td>문서</td><td>CoE, 비자 승인서, 보험, 학교 오퍼, 가족관계 서류를 클라우드+종이 이중 보관</td></tr>
+</tbody>
+</table>
+
+<h3>7-9. 실제 실행 기준선</h3>
+<div class="note">
+<b>현재 판단:</b> 아직 “2027 T3 vs T4 vs 2028 T1”을 결정할 필요는 없다.
+2026년 말~2027년 초에 아이의 Academic English를 실제 자료로 평가하고,
+그 결과에 따라 <b>2027 T3 정규 / 2027 T3 HSP / 2027 T4 정규 / 2028 T1 정규</b> 중 하나를 선택한다.
+다만 EQI 신청 마감이 생각보다 빠르므로, 2027 T3 가능성을 살리려면 2026년 안에 학교와 영어경로를 상당 부분 좁혀야 한다.
+</div>
+</section>
+
+<section id="cost">
+<h2>8. 현재 확인된 교육비 기준</h2>
+<table>
+<thead><tr><th>항목</th><th>2027</th><th>현재환율 한화</th><th>2028</th><th>현재환율 한화</th><th>비고</th></tr></thead>
+<tbody>
+<tr><td>Junior High School (Years 7–10)</td>
+<td>A$17,176 / year</td><td>약 0.17억원</td>
+<td>A$17,760 / year</td><td>약 0.17억원</td><td>EQI 공식 게시 금액</td></tr>
+<tr><td>High School Preparation</td>
+<td>A$524 / week</td><td>약 52만원/주</td>
+<td>A$542 / week</td><td>약 53만원/주</td><td>기간에 따라 총액 변동</td></tr>
+<tr><td>HSP 20주 예시</td>
+<td>A$10,480</td><td>약 0.10억원</td>
+<td>A$10,840</td><td>약 0.11억원</td><td>영어수준에 따라 10~40주 가능</td></tr>
+<tr><td>IB Diploma (Years 11–12)</td>
+<td>A$22,189 / year</td><td>약 0.22억원</td>
+<td>A$22,943 / year</td><td>약 0.23억원</td><td>장기 참고용</td></tr>
+</tbody>
+</table>
+<div class="note warn"><b>주의:</b> 2028 수치는 EQI가 ‘indicative’로 안내하며 실제 적용 시 조정될 수 있다. 교복, 디지털 기기, 일부 비교과활동, 보험, 주거, 생활비는 별도다.</div>
+<h3>앞으로 추가할 비용표</h3>
+<ul>
+<li>학교별 실제 교복·노트북·캠프·음악 프로그램 비용</li>
+<li>Sunnybank / Camp Hill / Indooroopilly 2BR 실제 렌트 매물</li>
+<li>자동차 보유 vs 대중교통 생활</li>
+<li>식비·통신·공과금·보험·항공·정착비</li>
+<li>2027 T3 / 2027 T4 / 2028 T1별 첫해 실제 현금흐름</li>
+</ul>
+</section>
+
+<section id="timeline">
+<h2>9. 다음 12~18개월 실행계획</h2>
+<div class="timeline">
+<div class="titem"><b>2026년 9~12월</b><br>DYB 성적표·레벨테스트·Writing/Reading 자료로 Academic English 진단. 세 학교 프로그램 재확인. 생활권·렌트 구조 1차 조사.</div>
+<div class="titem"><b>2027년 1분기</b><br>2027 T3/T4 입학과 2028 T1 입학을 모두 열어 두고 학교별 자리, HSP 필요성, 예상 Year 배정 문의.</div>
+<div class="titem"><b>2027년 상반기</b><br>출국 시기를 결정. 정규과정 직접 입학이면 학교 확정, 영어 준비가 부족하면 HSP 경로 확정. 비자·주거·보험·학적 준비.</div>
+<div class="titem"><b>2027 Term 3 출국 시</b><br>A안: 정규수업 시작 / B안: HSP 시작. 클라리넷 음악부 연결, 지역 야구클럽 적응.</div>
+<div class="titem"><b>2027 Term 4 출국 시</b><br>약 10주를 적응학기로 활용하고 2028 T1 새 학년 진입 준비.</div>
+<div class="titem"><b>2028 Term 1 출국 시</b><br>호주 새 학년부터 정규과정 진입을 우선 목표로 함.</div>
+</div>
+</section>
+
+<section id="korea">
+<h2>10. 한국 복귀 안전장치</h2>
+<ul>
+<li>출국 전 한국 학교 학적처리 방식 확인.</li>
+<li>호주 학교 재학증명서, 성적표, 출결, 입·퇴학일, 교육과정 관련 서류를 매 학기 보관.</li>
+<li>국어와 한국 수학은 복귀 가능성을 고려해 최소 수준 유지.</li>
+<li>중2·중3·고1·고2 귀국 시 각각의 편입/재취학 및 대학입시 영향을 별도로 시뮬레이션.</li>
+</ul>
+<div class="note">이 부분은 한국 교육청·학교 학적 지침과 대학별 재외국민/해외이수자 모집요강을 최신 기준으로 별도 검증하여 갱신한다.</div>
+</section>
+
+<section id="university">
+<h2>11. 대학진학 장기 전략</h2>
+<div class="grid">
+<div class="card"><h3>호주 대학 트랙</h3>
+<p>Year 10 이후 QCE/ATAR 또는 IB 경로를 비교. 전공별 prerequisite와 대학별 입학기준을 장기 추적.</p></div>
+<div class="card"><h3>한국 대학 복귀 트랙</h3>
+<p>일반전형, 재외국민전형, 해외이수 관련 전형 가능성을 학생·부모 체류조건과 재학기간 기준으로 별도 관리.</p></div>
+</div>
+<p class="small">현재 단계에서는 한쪽을 조기에 선택하지 않고, 중학교 동안 양쪽 경로를 가능한 한 오래 열어 두는 것이 기본방향이다.</p>
+</section>
+
+<section id="checklist">
+<h2>12. 업데이트 체크리스트</h2>
+<div class="checklist">
+<label><input type="checkbox"> DYB 최신 성적표/레벨테스트 반영</label>
+<label><input type="checkbox"> 2027/2028 예상 Year 배정 EQI 확인 및 실제 지원 시 확정</label>
+<label><input type="checkbox" checked> Sunnybank 실제 주거 후보 2~3곳 1차 조사</label>
+<label><input type="checkbox" checked> Camp Hill/Whites Hill 실제 주거 후보 2~3곳 1차 조사</label>
+<label><input type="checkbox" checked> Indooroopilly 실제 주거 후보 2~3곳 1차 조사</label>
+<label><input type="checkbox"> 각 생활권 야구클럽 시즌·연령 확인 완료 / 2027·2028 훈련일은 추후 갱신</label>
+<label><input type="checkbox"> 학교별 클라리넷/밴드 현재 운영 확인 / 2027·2028 신청일정은 추후 갱신</label>
+<label><input type="checkbox" checked> 아이 500 + 엄마 590 비자 기본구조 확인 / 신청시점 비용·조건 재확인</label>
+<label><input type="checkbox" checked> 첫해 반복 생활비+정규학비 기준표 1차 작성</label>
+<label><input type="checkbox"> 한국 중학교 학적/귀국 절차 공식 확인</label>
+<label><input type="checkbox"> 대학 특례/재외국민 조건 장기 추적표 작성</label>
+</div>
+</section>
+
+<section id="sources">
+<h2>13. 현재 공식 확인자료</h2>
+<ul>
+<li><a href="https://education.qld.gov.au/about-us/calendar/future-dates" target="_blank">Queensland Department of Education — Future school dates</a></li>
+<li><a href="https://eqi.com.au/apply-now/fees" target="_blank">Education Queensland International — Fees</a></li>
+<li><a href="https://eqi.com.au/apply-now/application-process" target="_blank">EQI — Application process</a></li>
+<li><a href="https://eqi.com.au/Documents/application-cut-off-dates.pdf" target="_blank">EQI — 2026~2028 application cut-off dates</a></li>
+<li><a href="https://eqi.com.au/apply-now/information-before-you-apply" target="_blank">EQI — Information before you apply</a></li>
+<li><a href="https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500" target="_blank">Australian Home Affairs — Student visa Subclass 500</a></li>
+<li><a href="https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-590" target="_blank">Australian Home Affairs — Student Guardian visa Subclass 590</a></li>
+<li><a href="https://immi.homeaffairs.gov.au/visas/getting-a-visa/visa-listing/student-500/welfare-arrangements-students-under-18" target="_blank">Home Affairs — Welfare arrangements for students under 18</a></li>
+<li><a href="https://immi.homeaffairs.gov.au/visas/web-evidentiary-tool" target="_blank">Home Affairs — Student visa document checklist tool</a></li>
+
+<li><a href="https://wise.com/kr/currency-converter/aud-to-krw-rate" target="_blank">Wise — AUD/KRW 현재 환율 참고</a></li>
+<li><a href="https://www.realestate.com.au/qld/sunnybank-4109/" target="_blank">realestate.com.au — Sunnybank 임대시장</a></li>
+<li><a href="https://www.realestate.com.au/qld/camp-hill-4152/" target="_blank">realestate.com.au — Camp Hill 임대시장</a></li>
+<li><a href="https://www.realestate.com.au/qld/indooroopilly-4068/" target="_blank">realestate.com.au — Indooroopilly 임대시장</a></li>
+<li><a href="https://www.realestate.com.au/rent/with-2-bedrooms-in-macgregor%2C%2Bqld%2B4109/list-1" target="_blank">realestate.com.au — Macgregor 2BR 임대시장</a></li>
+<li><a href="https://www.realestate.com.au/qld/robertson-4109/" target="_blank">realestate.com.au — Robertson 임대시장</a></li>
+<li><a href="https://www.realestate.com.au/rent/with-2-bedrooms-in-carina%2C%2Bqld%2B4152/list-1" target="_blank">realestate.com.au — Carina 2BR 임대시장</a></li>
+<li><a href="https://www.realestate.com.au/rent/in-carina%2Bheights%2Bqld%2B4152/list-2" target="_blank">realestate.com.au — Carina Heights 임대시장</a></li>
+<li><a href="https://www.realestate.com.au/rent/with-2-bedrooms-in-taringa%2C%2Bqld%2B4068/list-1" target="_blank">realestate.com.au — Taringa 2BR 임대시장</a></li>
+<li><a href="https://www.realestate.com.au/rent/with-2-bedrooms-in-toowong/list-2" target="_blank">realestate.com.au — Toowong 2BR 임대시장</a></li>
+<li><a href="https://translink.com.au/tickets-and-fares/50-cent-fares" target="_blank">Translink — Queensland 50 cent fares</a></li>
+<li><a href="https://sunnybankshs.eq.edu.au/our-school/contact-us" target="_blank">Sunnybank State High School — Contact / address</a></li>
+<li><a href="https://indoorooshs.eq.edu.au/our-school/contact-us" target="_blank">Indooroopilly State High School — Contact / address</a></li>
+<li><a href="https://indoorooshs.eq.edu.au/curriculum/instrumental-music" target="_blank">Indooroopilly SHS — Instrumental Music</a></li>
+<li><a href="https://indians.org.au/" target="_blank">Indians Baseball Club — Runcorn</a></li>
+<li><a href="https://www.baseballqueensland.com.au/spring-training/" target="_blank">Baseball Queensland — Spring Training</a></li>
+<li><a href="https://www.qld.gov.au/recreation/sports/funding/playon/find-provider?page=37" target="_blank">Queensland Government — Carina Red Sox provider listing</a></li>
+<li><a href="https://westsbaseball.com.au/" target="_blank">Western Districts Baseball Club — Darra</a></li>
+<li><a href="https://translink.com.au/" target="_blank">Translink — Journey Planner</a></li>
+
+
+<li><a href="https://eqi.com.au/study-options/high-school-preparation-program" target="_blank">EQI — High School Preparation Program</a></li>
+<li><a href="https://eqi.com.au/findaschool/schools/sunnybankshs" target="_blank">EQI — Sunnybank State High School</a></li>
+<li><a href="https://eqi.com.au/findaschool/schools/whiteshillsc/" target="_blank">EQI — Whites Hill State College</a></li>
+<li><a href="https://eqi.com.au/find-a-school/indooroopilly-shs" target="_blank">EQI — Indooroopilly State High School</a></li>
+</ul>
+<div class="note"><b>관리방법:</b> 앞으로 조사할 때마다 이 HTML의 버전을 v0.6, v0.7…로 올리고, “확정”, “검토중”, “변경가능” 정보를 구분해 업데이트한다. 최신 규정이 필요한 비자·입학·비용·학적·대학전형은 반드시 공식자료로 재확인한다.</div>
+</section>
+
+<footer>
+브리즈번 유학 마스터 플랜 v0.5 · 생성일 2026-09-17 · 가족 의사결정용 내부 문서
+</footer>
+
+</main>
+<script>
+function filterSchool(name,btn){
+  document.querySelectorAll('.filters button').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  document.querySelectorAll('.school-card').forEach(c=>{
+    c.classList.toggle('hidden', !(name==='all' || c.dataset.school===name));
+  });
+}
+</script>
+</body>
+</html>

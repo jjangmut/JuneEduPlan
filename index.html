@@ -1,0 +1,1608 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EduPlan Wiki · 우리 아이 유학 & 진로 마스터 플랜</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pretendard:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --font-main: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, 'Segoe UI', 'Malgun Gothic', sans-serif;
+  --bg-app: #f8fafc;
+  --bg-sidebar: #0f172a;
+  --sidebar-hover: #1e293b;
+  --sidebar-active: #3b82f6;
+  --sidebar-text: #94a3b8;
+  --sidebar-text-active: #ffffff;
+  --content-bg: #ffffff;
+  --text-main: #0f172a;
+  --text-muted: #64748b;
+  --border: #e2e8f0;
+  --primary: #2563eb;
+  --primary-light: #eff6ff;
+  --secondary: #0d9488;
+  --secondary-light: #f0fdfa;
+  --accent-purple: #7c3aed;
+  --accent-purple-light: #f5f3ff;
+  --warning: #d97706;
+  --warning-light: #fffbeb;
+  --danger: #dc2626;
+  --danger-light: #fef2f2;
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.07), 0 2px 4px -2px rgb(0 0 0 / 0.05);
+  --radius: 12px;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: var(--font-main);
+  background-color: var(--bg-app);
+  color: var(--text-main);
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Sidebar */
+aside.sidebar {
+  width: 290px;
+  background-color: var(--bg-sidebar);
+  color: var(--sidebar-text);
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  transition: all 0.3s ease;
+  z-index: 100;
+  border-right: 1px solid rgba(255,255,255,0.06);
+}
+
+.sidebar-header {
+  padding: 24px 20px 18px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+.sidebar-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.sidebar-title .logo-badge {
+  background: linear-gradient(135deg, #3b82f6, #06b6d4);
+  color: #fff;
+  font-size: 13px;
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-weight: 800;
+}
+.sidebar-sub {
+  font-size: 12px;
+  color: #64748b;
+  margin-top: 6px;
+}
+
+.sidebar-search {
+  padding: 14px 18px 8px;
+}
+.search-input-wrap {
+  position: relative;
+}
+.search-input-wrap input {
+  width: 100%;
+  background: #1e293b;
+  border: 1px solid #334155;
+  border-radius: 8px;
+  padding: 8px 12px 8px 34px;
+  color: #f8fafc;
+  font-size: 13px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+.search-input-wrap input:focus {
+  border-color: #3b82f6;
+}
+.search-icon {
+  position: absolute;
+  left: 10px;
+  top: 9px;
+  font-size: 13px;
+  opacity: 0.6;
+}
+
+.sidebar-nav {
+  flex: 1;
+  overflow-y: auto;
+  padding: 12px 14px 24px;
+}
+.nav-group {
+  margin-bottom: 18px;
+}
+.nav-group-title {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: #64748b;
+  padding: 6px 10px;
+  font-weight: 700;
+}
+.nav-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 12px;
+  border-radius: 8px;
+  color: var(--sidebar-text);
+  text-decoration: none;
+  font-size: 13.5px;
+  font-weight: 500;
+  transition: all 0.15s ease;
+  cursor: pointer;
+  margin-bottom: 2px;
+}
+.nav-item:hover {
+  background-color: var(--sidebar-hover);
+  color: #fff;
+}
+.nav-item.active {
+  background-color: var(--sidebar-active);
+  color: var(--sidebar-text-active);
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(59, 130, 246, 0.35);
+}
+.nav-icon {
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+}
+
+.sidebar-footer {
+  padding: 14px 18px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  font-size: 12px;
+  color: #64748b;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Main Layout */
+.main-wrapper {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background-color: var(--bg-app);
+}
+
+header.topbar {
+  background: #ffffff;
+  border-bottom: 1px solid var(--border);
+  padding: 14px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 10;
+}
+.topbar-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.mobile-toggle {
+  display: none;
+  background: none;
+  border: 1px solid var(--border);
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.breadcrumb {
+  font-size: 13.5px;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.breadcrumb span.current {
+  color: var(--text-main);
+  font-weight: 600;
+}
+.topbar-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.badge-status {
+  padding: 5px 12px;
+  border-radius: 999px;
+  font-size: 12px;
+  font-weight: 600;
+  background-color: #ecfdf5;
+  color: #047857;
+  border: 1px solid #a7f3d0;
+}
+.btn-action {
+  background: #fff;
+  border: 1px solid var(--border);
+  padding: 7px 13px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-main);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s;
+}
+.btn-action:hover {
+  background-color: #f1f5f9;
+  border-color: #cbd5e1;
+}
+
+/* Content Container */
+.content-area {
+  flex: 1;
+  overflow-y: auto;
+  padding: 32px;
+  scroll-behavior: smooth;
+}
+.content-inner {
+  max-width: 1040px;
+  margin: 0 auto;
+}
+
+/* Page Views */
+.wiki-page {
+  display: none;
+  animation: fadeIn 0.2s ease-in-out;
+}
+.wiki-page.active {
+  display: block;
+}
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Typography & Cards */
+.page-header {
+  margin-bottom: 28px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid var(--border);
+}
+.page-tag {
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--primary);
+  background: var(--primary-light);
+  padding: 4px 10px;
+  border-radius: 6px;
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+.page-title {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--text-main);
+  letter-spacing: -0.02em;
+  line-height: 1.3;
+}
+.page-desc {
+  font-size: 15px;
+  color: var(--text-muted);
+  margin-top: 8px;
+  line-height: 1.6;
+}
+
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 28px;
+}
+.kpi-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 18px 20px;
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s;
+}
+.kpi-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+.kpi-label {
+  font-size: 12.5px;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+.kpi-val {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--text-main);
+  margin: 6px 0 2px;
+}
+.kpi-desc {
+  font-size: 11.5px;
+  color: #059669;
+  font-weight: 600;
+}
+
+/* Callout Boxes */
+.callout {
+  padding: 16px 20px;
+  border-radius: var(--radius);
+  margin: 20px 0;
+  font-size: 14px;
+  line-height: 1.65;
+  display: flex;
+  gap: 14px;
+}
+.callout-icon {
+  font-size: 20px;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+.callout-body strong {
+  display: block;
+  font-size: 14.5px;
+  margin-bottom: 4px;
+}
+.callout.danger {
+  background: var(--danger-light);
+  border-left: 4px solid var(--danger);
+  color: #991b1b;
+}
+.callout.warning {
+  background: var(--warning-light);
+  border-left: 4px solid var(--warning);
+  color: #92400e;
+}
+.callout.info {
+  background: var(--primary-light);
+  border-left: 4px solid var(--primary);
+  color: #1e40af;
+}
+.callout.success {
+  background: var(--secondary-light);
+  border-left: 4px solid var(--secondary);
+  color: #115e59;
+}
+.callout.purple {
+  background: var(--accent-purple-light);
+  border-left: 4px solid var(--accent-purple);
+  color: #5b21b6;
+}
+
+/* Card Grids */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin: 20px 0;
+}
+.card-grid.three {
+  grid-template-columns: repeat(3, 1fr);
+}
+.card-box {
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 22px;
+  box-shadow: var(--shadow-sm);
+}
+.card-box h3 {
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #0f172a;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.card-box p {
+  font-size: 14px;
+  color: #334155;
+  line-height: 1.6;
+  margin-bottom: 10px;
+}
+.card-box ul {
+  padding-left: 18px;
+  font-size: 13.5px;
+  color: #334155;
+  line-height: 1.65;
+}
+.card-box li {
+  margin-bottom: 6px;
+}
+
+/* Modern Tables */
+.table-wrap {
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: #fff;
+  margin: 20px 0;
+  box-shadow: var(--shadow-sm);
+}
+table.wiki-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13.5px;
+  text-align: left;
+}
+table.wiki-table th {
+  background: #f8fafc;
+  color: #475569;
+  font-weight: 600;
+  padding: 13px 16px;
+  border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+}
+table.wiki-table td {
+  padding: 13px 16px;
+  border-bottom: 1px solid var(--border);
+  color: #1e293b;
+  vertical-align: top;
+  line-height: 1.6;
+}
+table.wiki-table tr:last-child td {
+  border-bottom: none;
+}
+table.wiki-table tr:hover td {
+  background-color: #f8fafc;
+}
+
+/* Badges & Tags */
+.tag {
+  display: inline-block;
+  padding: 3px 8px;
+  border-radius: 6px;
+  font-size: 11.5px;
+  font-weight: 600;
+  margin-right: 4px;
+}
+.tag-blue { background: #e0e7ff; color: #3730a3; }
+.tag-green { background: #dcfce7; color: #166534; }
+.tag-amber { background: #fef3c7; color: #92400e; }
+.tag-purple { background: #ede9fe; color: #5b21b6; }
+.tag-red { background: #fee2e2; color: #991b1b; }
+
+/* Timeline */
+.timeline {
+  position: relative;
+  padding-left: 26px;
+  margin: 24px 0;
+}
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 7px;
+  top: 6px;
+  bottom: 6px;
+  width: 2px;
+  background: #cbd5e1;
+}
+.timeline-item {
+  position: relative;
+  margin-bottom: 24px;
+}
+.timeline-dot {
+  position: absolute;
+  left: -26px;
+  top: 4px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #fff;
+  border: 3px solid var(--primary);
+}
+.timeline-date {
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 4px;
+}
+.timeline-title {
+  font-size: 15.5px;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 6px;
+}
+.timeline-body {
+  font-size: 13.5px;
+  color: #475569;
+  line-height: 1.6;
+}
+
+/* Interactive Checklist */
+.checklist-card {
+  background: #ffffff;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  margin: 20px 0;
+}
+.check-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 10px 8px;
+  border-bottom: 1px solid #f1f5f9;
+  cursor: pointer;
+  transition: background 0.15s;
+}
+.check-item:last-child { border-bottom: none; }
+.check-item:hover { background-color: #f8fafc; border-radius: 6px; }
+.check-item input[type="checkbox"] {
+  width: 17px;
+  height: 17px;
+  margin-top: 3px;
+  accent-color: var(--primary);
+  cursor: pointer;
+}
+.check-content {
+  flex: 1;
+}
+.check-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #0f172a;
+}
+.check-sub {
+  font-size: 12.5px;
+  color: #64748b;
+  margin-top: 2px;
+}
+
+/* Tab Bar */
+.tab-bar {
+  display: flex;
+  gap: 8px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 20px;
+}
+.tab-btn {
+  background: none;
+  border: none;
+  padding: 10px 16px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-muted);
+  cursor: pointer;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s;
+}
+.tab-btn:hover { color: var(--text-main); }
+.tab-btn.active {
+  color: var(--primary);
+  border-bottom-color: var(--primary);
+}
+
+/* Print Styles */
+@media print {
+  aside.sidebar, header.topbar, .btn-action, .search-input-wrap { display: none !important; }
+  body, .main-wrapper, .content-area { height: auto !important; overflow: visible !important; background: #fff !important; }
+  .wiki-page { display: block !important; page-break-after: always; }
+  .content-area { padding: 0 !important; }
+}
+
+/* Mobile Responsive */
+@media (max-width: 900px) {
+  aside.sidebar {
+    position: fixed;
+    left: -290px;
+    top: 0;
+    bottom: 0;
+  }
+  aside.sidebar.mobile-open {
+    left: 0;
+  }
+  .mobile-toggle { display: inline-flex; }
+  .kpi-grid { grid-template-columns: repeat(2, 1fr); }
+  .card-grid, .card-grid.three { grid-template-columns: 1fr; }
+  .content-area { padding: 20px 16px; }
+  header.topbar { padding: 12px 16px; }
+}
+</style>
+</head>
+<body>
+
+<!-- Sidebar -->
+<aside class="sidebar" id="sidebar">
+  <div class="sidebar-header">
+    <div class="sidebar-title">
+      <span>EduPlan Wiki</span>
+      <span class="logo-badge">v0.8 Web</span>
+    </div>
+    <div class="sidebar-sub">2014년생 남학생 유학&진로 포털</div>
+  </div>
+
+  <div class="sidebar-search">
+    <div class="search-input-wrap">
+      <span class="search-icon">🔍</span>
+      <input type="text" id="wikiSearch" placeholder="키워드 검색 (A-Level, 특례, 비자...)" onkeyup="filterWikiContent()">
+    </div>
+  </div>
+
+  <nav class="sidebar-nav">
+    <div class="nav-group">
+      <div class="nav-group-title">대시보드</div>
+      <a class="nav-item active" onclick="switchPage('page-overview', this)">
+        <span class="nav-icon">📊</span>
+        <span>프로젝트 총괄 현황</span>
+      </a>
+    </div>
+
+    <div class="nav-group">
+      <div class="nav-group-title">핵심 전략 축 (Family Decisions)</div>
+      <a class="nav-item" onclick="switchPage('page-factcheck', this)">
+        <span class="nav-icon">🚨</span>
+        <span>대입 팩트체크 (3년특례 vs 수시)</span>
+      </a>
+      <a class="nav-item" onclick="switchPage('page-curriculum', this)">
+        <span class="nav-icon">🎯</span>
+        <span>커리큘럼: 왜 A-Level인가?</span>
+      </a>
+      <a class="nav-item" onclick="switchPage('page-country', this)">
+        <span class="nav-icon">🌏</span>
+        <span>국가별 비교 (호주 vs 말레이시아)</span>
+      </a>
+      <a class="nav-item" onclick="switchPage('page-career', this)">
+        <span class="nav-icon">⚾</span>
+        <span>10년 진로 & 야구 세이버메트릭스</span>
+      </a>
+    </div>
+
+    <div class="nav-group">
+      <div class="nav-group-title">호주 브리즈번 실행 계획</div>
+      <a class="nav-item" onclick="switchPage('page-scenarios', this)">
+        <span class="nav-icon">🗓️</span>
+        <span>2027 vs 2028 출국 시나리오</span>
+      </a>
+      <a class="nav-item" onclick="switchPage('page-schools', this)">
+        <span class="nav-icon">🏫</span>
+        <span>후보 학교 심층 분석</span>
+      </a>
+      <a class="nav-item" onclick="switchPage('page-housing', this)">
+        <span class="nav-icon">🏡</span>
+        <span>주거지 시세 & 월 생활비</span>
+      </a>
+      <a class="nav-item" onclick="switchPage('page-english', this)">
+        <span class="nav-icon">📝</span>
+        <span>영어 진단 & Academic English</span>
+      </a>
+      <a class="nav-item" onclick="switchPage('page-visa', this)">
+        <span class="nav-icon">📑</span>
+        <span>지원 프로세스 & 비자 규정</span>
+      </a>
+    </div>
+
+    <div class="nav-group">
+      <div class="nav-group-title">안전장치 및 관리</div>
+      <a class="nav-item" onclick="switchPage('page-return', this)">
+        <span class="nav-icon">🛡️</span>
+        <span>한국 복귀 & 중도귀국 시뮬레이션</span>
+      </a>
+      <a class="nav-item" onclick="switchPage('page-timeline', this)">
+        <span class="nav-icon">⏳</span>
+        <span>향후 18개월 로드맵</span>
+      </a>
+      <a class="nav-item" onclick="switchPage('page-checklist', this)">
+        <span class="nav-icon">✅</span>
+        <span>마스터 체크리스트</span>
+      </a>
+    </div>
+  </nav>
+
+  <div class="sidebar-footer">
+    <span>최종 갱신: 2026.09.20</span>
+    <span class="tag tag-green">가족 공유용</span>
+  </div>
+</aside>
+
+<!-- Main Wrapper -->
+<div class="main-wrapper">
+  <!-- Topbar -->
+  <header class="topbar">
+    <div class="topbar-left">
+      <button class="mobile-toggle" onclick="toggleMobileSidebar()">☰</button>
+      <div class="breadcrumb">
+        <span>EduPlan</span> / <span class="current" id="breadcrumbTitle">프로젝트 총괄 현황</span>
+      </div>
+    </div>
+    <div class="topbar-actions">
+      <span class="badge-status">동기화 완료 · Live Wiki</span>
+      <button class="btn-action" onclick="window.print()">🖨️ PDF / 인쇄</button>
+      <button class="btn-action" onclick="copyShareLink()">🔗 공유 링크 복사</button>
+    </div>
+  </header>
+
+  <!-- Content Scrollable Area -->
+  <div class="content-area">
+    <div class="content-inner">
+
+      <!-- ================= PAGE 1: OVERVIEW ================= -->
+      <section class="wiki-page active" id="page-overview">
+        <div class="page-header">
+          <span class="page-tag">Project Overview</span>
+          <h1 class="page-title">우리 아이 학업·유학 마스터 플랜 대시보드</h1>
+          <p class="page-desc">2014년 5월생 남학생의 잠재력(수학 몰입도·야구·클라리넷)을 극대화하고, 안전한 국내외 대입 출구를 설계하기 위한 종합 실행 포털입니다.</p>
+        </div>
+
+        <div class="kpi-grid">
+          <div class="kpi-card">
+            <div class="kpi-label">출생 & 기준 나이</div>
+            <div class="kpi-val">2014년 5월</div>
+            <div class="kpi-desc">2027년 만 13세 (중2 / Yr 8)</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-label">가장 안정적인 출국안</div>
+            <div class="kpi-val">2028 Term 1</div>
+            <div class="kpi-desc">한국 중1 이수 후 새 학년 입학</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-label">호주 연간 총예산(2인)</div>
+            <div class="kpi-val">약 7,500 ~ 8,500만</div>
+            <div class="kpi-desc">학비 A$17,176 + 생활비 포함</div>
+          </div>
+          <div class="kpi-card">
+            <div class="kpi-label">말레이시아 대안(2인)</div>
+            <div class="kpi-val">약 3,500 ~ 4,500만</div>
+            <div class="kpi-desc">호주 대비 1/2 수준 초가성비</div>
+          </div>
+        </div>
+
+        <div class="callout purple">
+          <span class="callout-icon">💡</span>
+          <div class="callout-body">
+            <strong>프로젝트의 핵심 철학 (AI 시대의 유학)</strong>
+            단순 영어 하나를 배우기 위한 유학은 AI 번역·튜터가 발전한 현시점에서 경제적 효율이 낮습니다. 유학의 진짜 목표는 <b>"수학적 논리 모델 + 야구 도메인 지식을 갖춘 학업적 독립성"</b>과 <b>"호주 명문대(Go8) & 연세대 언더우드 수시 동시 공략 선택권"</b>을 아이에게 쥐어주는 것입니다.
+          </div>
+        </div>
+
+        <div class="card-grid">
+          <div class="card-box">
+            <h3>👦 학생의 핵심 역량 및 프로필</h3>
+            <ul>
+              <li><b>학업 성향:</b> 전 과목을 두루 잘 챙기기보다, <b>과학은 다소 약하지만 수학과 논리적 사고에 깊이 몰입하는 이과형</b>.</li>
+              <li><b>현재 어학:</b> DYB 최선어학원 포세이돈(Poseidon) 반 수강 중.</li>
+              <li><b>음악 활동:</b> 클라리넷 개인 레슨 경험 (학교 밴드/오케스트라 진입 매개체).</li>
+              <li><b>스포츠 활동:</b> 야구아카데미 취미반 활동 중 (팀워크, 현장 영어, 자존감의 핵심 도구).</li>
+            </ul>
+          </div>
+          <div class="card-box">
+            <h3>🧭 4대 핵심 합의 및 전략 방향</h3>
+            <ul>
+              <li><b>대입 팩트체크:</b> 엄마 가디언(590) 비자 체류 시 <b>재외국민 3년 특례는 법적 100% 불가</b> → <b>연세대 언더우드 등 국내 상위권 수시 학종(100% 가능)</b>으로 방향 수정!</li>
+              <li><b>커리큘럼 최적화:</b> 6개 전 과목 이수가 강제되는 IB 대신, <b>수학 중심 3과목(수학+심화수학+컴공)에 올인하는 A-Level</b>이 압도적으로 유리.</li>
+              <li><b>국가 선택의 균형:</b> 라이프스타일과 야구 인프라는 <b>호주 브리즈번</b>이 최고, 비용 통제와 A-Level 효율은 <b>말레이시아</b>가 강력한 대안.</li>
+              <li><b>10년 진로:</b> 좋아하는 야구와 수학을 결합한 <b>스포츠 데이터 분석가(세이버메트릭스) / 퀀트</b> 육성.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card-box" style="margin-top:20px;">
+          <h3>🚀 빠른 바로가기 (Quick Links)</h3>
+          <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:10px;">
+            <button class="btn-action" onclick="switchPage('page-factcheck', null)">🚨 3년 특례 팩트체크 읽기</button>
+            <button class="btn-action" onclick="switchPage('page-curriculum', null)">🎯 A-Level 과목 구성 보기</button>
+            <button class="btn-action" onclick="switchPage('page-country', null)">🌏 호주 vs 말레이시아 비교</button>
+            <button class="btn-action" onclick="switchPage('page-career', null)">⚾ 야구 세이버메트릭스 진로</button>
+            <button class="btn-action" onclick="switchPage('page-schools', null)">🏫 브리즈번 주후보 3교 보기</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= PAGE 2: FACT CHECK ================= -->
+      <section class="wiki-page" id="page-factcheck">
+        <div class="page-header">
+          <span class="page-tag">University Admission</span>
+          <h1 class="page-title">대입 전형의 냉정한 현실: 3년 특례의 오해와 국내 수시 대안</h1>
+          <p class="page-desc">가디언 비자로 호주/말레이시아에 체류할 때 발생하는 치명적인 입시 법률 요건을 정확히 점검합니다.</p>
+        </div>
+
+        <div class="callout danger">
+          <span class="callout-icon">🚨</span>
+          <div class="callout-body">
+            <strong>[핵심 경고] 엄마 가디언 체류 시 "재외국민 3년 특례"는 100% 지원 불가</strong>
+            대학입학전형 기본사항에 따르면, 3년 특례(중·고교 해외이수자 전형)는 부모 중 1인이 해외 공관, 지사, 상사 주재원이나 현지 취업, 법인 사업자로서 <b>공식 소득세를 납부하는 '해외근무자'</b>여야 합니다.<br>
+            엄마가 호주 가디언 비자(Subclass 590)나 말레이시아 동반비자로 아이를 돌보며 체류하는 것은 <b>'근무/사업'에 해당하지 않으므로 특례 자격이 법적으로 성립되지 않습니다.</b> 제주 국제학교 체류 역시 특례 불가입니다.
+          </div>
+        </div>
+
+        <div class="card-grid">
+          <div class="card-box" style="border-top:4px solid var(--danger);">
+            <h3 style="color:var(--danger);">❌ 막힌 길: 재외국민 3년 특례</h3>
+            <p><b>실패 원인:</b> 부모의 해외 세무 증빙(원천징수영수증, 납세증명서) 제출 불가능.</p>
+            <ul>
+              <li>호주 590 가디언 비자는 법적으로 취업이 엄격히 금지된 비자입니다.</li>
+              <li>"호주에서 3년 중고등학교 다녔으니 연고대 특례로 가겠다"는 계획은 입학 원서 접수 자체가 거부됩니다.</li>
+              <li>따라서 특례라는 환상에 기대어 유학 계획을 세우면 절대 안 됩니다.</li>
+            </ul>
+          </div>
+          <div class="card-box" style="border-top:4px solid var(--secondary);">
+            <h3 style="color:var(--secondary);">✅ 완벽히 열려있는 길: 국내 상위권 수시 학종 (국제형)</h3>
+            <p><b>성공 원리:</b> 부모의 신분/직업과 무관하게, <b>아이의 우수한 학업 역량만으로 합격 가능</b>.</p>
+            <ul>
+              <li><b>연세대 언더우드 국제학부(UD / HASS / ISE):</b> 국외고 졸업자 대상 수시 학생부종합전형(국제형)으로 매년 다수 선발 (부모 비자 보지 않음).</li>
+              <li><b>고려대, 성균관대 등:</b> 학생부종합 국외고 졸업자 지원 트랙 지원 가능.</li>
+              <li><b>요구 스펙:</b> 우수한 고교 GPA + <b>A-Level 최상위 성적 ($A^*AA$ 이상)</b> + 교내 비교과 포트폴리오.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card-box" style="margin-top:20px;">
+          <h3>📊 대입 출구 투 트랙 (Two-Track) 비교표</h3>
+          <div class="table-wrap">
+            <table class="wiki-table">
+              <thead>
+                <tr>
+                  <th>트랙 구분</th>
+                  <th>목표 대학 및 학과</th>
+                  <th>평가 요소 및 요구 조건</th>
+                  <th>전략적 가치</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><b>Track 1<br>(해외 직행)</b></td>
+                  <td>호주 명문 Go8 (UQ, 시드니대, 멜버른대) 등<br>데이터사이언스 · 통계 · 컴공</td>
+                  <td>• A-Level 성적 ($A^*AA$ ~ $AAA$ 선)<br>• 또는 호주 QCE/ATAR 90+</td>
+                  <td>졸업 후 졸업생 취업비자(Subclass 485) 취득 → 글로벌 테크 기업 및 현지 안착</td>
+                </tr>
+                <tr>
+                  <td><b>Track 2<br>(국내 복귀)</b></td>
+                  <td>연세대 언더우드(UD, HASS, ISE)<br>계량위험관리(QRM), 데이터 등</td>
+                  <td>• A-Level 성적표 ($A^*A^*A$ 권장)<br>• 영어 심층 면접 및 비교과 포트폴리오</td>
+                  <td>부모 비자 무관 100% 지원 가능, 국내 최고 명문대 학사 학위 취득</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= PAGE 3: CURRICULUM ================= -->
+      <section class="wiki-page" id="page-curriculum">
+        <div class="page-header">
+          <span class="page-tag">Curriculum Strategy</span>
+          <h1 class="page-title">학생 맞춤형 커리큘럼: 왜 IB가 아닌 A-Level인가?</h1>
+          <p class="page-desc">아이의 학업적 강점(수학·논리 몰입)을 극대화하고 약점(과학·다방면 과제)을 완벽히 방어하는 커리큘럼 전략입니다.</p>
+        </div>
+
+        <div class="callout info">
+          <span class="callout-icon">🎯</span>
+          <div class="callout-body">
+            <strong>아이의 학습 성향 진단 결과:</strong>
+            아이는 다방면의 과목을 골고루 챙기는 '잡학형'이 아니라, <b>"과학이나 광범위한 암기형 과목에는 약하지만 수학과 논리적 문제 해결에 깊이 몰입하는 이과형"</b>입니다. 커리큘럼 선택이 아이의 인생 10년을 좌우합니다.
+          </div>
+        </div>
+
+        <div class="table-wrap">
+          <table class="wiki-table">
+            <thead>
+              <tr>
+                <th>비교 항목</th>
+                <th>영국계 A-Level (강력 추천 ⭐⭐⭐)</th>
+                <th>국제 바칼로레아 (IB Diploma)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><b>과목 이수 구조</b></td>
+                <td><b>자신 있는 3~4과목만 선택하여 깊게 공략</b><br>예: 수학, 심화수학, 컴퓨터(또는 경제)</td>
+                <td>문학, 외국어, 사회, 과학, 수학, 예술 등 <b>6개 전 영역을 의무적으로 이수</b></td>
+              </tr>
+              <tr>
+                <td><b>필수 부가 요건</b></td>
+                <td><b>없음</b> (선택한 3~4과목 최종 시험 성적만으로 평가)</td>
+                <td>• 4,000단어 소논문 (Extended Essay)<br>• 철학 지식론 (TOK)<br>• 창의·봉사활동 (CAS 150시간)</td>
+              </tr>
+              <tr>
+                <td><b>아이 성향과의 매칭</b></td>
+                <td><b>완벽 매칭:</b> 한국식 선행을 무기로 수학 2과목(Maths + Further Maths)을 깔고 들어가면 학업 피로도 없이 $A^*AA$ 확보 가능</td>
+                <td><b>위험 매칭:</b> 과학과 글쓰기 부담으로 인해 6개 과목 밸런스가 무너지며 전체 IB 총점이 급락할 위험 매우 큼</td>
+              </tr>
+              <tr>
+                <td><b>대입 범용성</b></td>
+                <td>영국, 호주(Go8), 싱가포르(NUS), 홍콩대는 물론 <b>연세대 언더우드 수시 학종</b>에서도 최상위 학업 역량으로 완벽 인정</td>
+                <td>전 세계 명문대 인정 (단, 이수 난이도가 극도로 높아 내신 관리가 매우 까다로움)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="callout purple">
+          <span class="callout-icon">👑</span>
+          <div class="callout-body">
+            <strong>[추천] A-Level 황금 과목 조합 안 (3~4과목)</strong>
+            <ol style="margin-left: 20px; margin-top: 6px;">
+              <li><b>Mathematics (수학):</b> 한국식 수학 기본기로 확실한 $A^*$ 확보</li>
+              <li><b>Further Mathematics (심화수학):</b> 고난도 미적분/대수학 몰입 → 명문대 공대/통계학과 필수 우대 과목</li>
+              <li><b>Computer Science 또는 Economics (컴공 또는 경제):</b> 향후 데이터 사이언티스트 / 퀀트 진로와 직결</li>
+            </ol>
+            <p style="margin-top:6px; font-size:13px; color:#6b21a8;">→ 2년 동안 딱 이 3과목만 파고들어 <b>$A^*A^*A$ 또는 $A^*AA$</b>를 획득하면 전 세계 명문대 어디든 문이 활짝 열립니다.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= PAGE 4: COUNTRY COMPARE ================= -->
+      <section class="wiki-page" id="page-country">
+        <div class="page-header">
+          <span class="page-tag">Location Comparison</span>
+          <h1 class="page-title">국가별 유학 환경 비교: 호주 브리즈번 vs 말레이시아 vs 제주도</h1>
+          <p class="page-desc">생활의 질, 야구 환경, 커리큘럼 적합성, 그리고 연간 소요 예산을 종합적으로 비교 분석합니다.</p>
+        </div>
+
+        <div class="table-wrap">
+          <table class="wiki-table">
+            <thead>
+              <tr>
+                <th>비교 기준</th>
+                <th>호주 퀸즐랜드 브리즈번 (현재 1순위)</th>
+                <th>말레이시아 (가장 추천되는 대안)</th>
+                <th>제주도 국제학교</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><b>연간 총비용<br>(엄마+아이 2인)</b></td>
+                <td><b>연 약 7,500만 ~ 8,500만원</b><br>(공립 학비 A$17,176 + 렌트/생활비)</td>
+                <td><b>연 약 3,500만 ~ 4,500만원</b><br>(호주 대비 1/2 수준, 최강의 가성비)</td>
+                <td><b>연 약 8,000만 ~ 1억원+</b><br>(국제학교 등록금 + 기숙사/연세)</td>
+              </tr>
+              <tr>
+                <td><b>제공 커리큘럼</b></td>
+                <td>호주 주정부과정(QCE) 또는 IB<br><i>(A-Level 공립학교는 거의 없음)</i></td>
+                <td><b>영국 명문 사립 A-Level 다수</b><br>(Epsom, KTJ, Alice Smith, Tenby 등)</td>
+                <td>NLCS(IB), SJA(A-Level 등) 혼재</td>
+              </tr>
+              <tr>
+                <td><b>야구 인프라</b></td>
+                <td><b>압도적 최상 (⭐⭐⭐⭐⭐)</b><br>지역 주니어 클럽 야구 시스템 완벽</td>
+                <td><b>매우 열악 (⭐)</b><br>야구 클럽 전무 (골프, 배드민턴, 축구 위주)</td>
+                <td><b>보통 (⭐⭐)</b><br>교내 방과후 동아리 수준</td>
+              </tr>
+              <tr>
+                <td><b>클라리넷 / 음악</b></td>
+                <td>학교 관악 밴드 및 심포니 오케스트라 우수</td>
+                <td>영국식 오케스트라 및 저렴한 1:1 개인 레슨</td>
+                <td>수준 높은 교내 오케스트라 운영</td>
+              </tr>
+              <tr>
+                <td><b>보호자 생활 환경</b></td>
+                <td>서구권 쾌적한 라이프, 차량 필수, 언어 적응</td>
+                <td>한국과 1시간 시차, 한인 인프라 풍부, 가사도우미 용이</td>
+                <td>국내 환경, 비자 걱정 없음, 잦은 육지 왕래</td>
+              </tr>
+              <tr>
+                <td><b>중도 귀국 리스크</b></td>
+                <td>높은 비용 지출, QCE 과정 호환성 보통</td>
+                <td><b>리스크 제로:</b> 저비용으로 영어 잡고 중학교 복귀 시 손실 없음</td>
+                <td>비용 매몰 큼</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="callout warning">
+          <span class="callout-icon">⚖️</span>
+          <div class="callout-body">
+            <strong>가족 의사결정의 핵심 트레이드오프 (Trade-off):</strong><br>
+            • <b>호주 브리즈번 선택 시:</b> "아이의 야구 꿈과 클라리넷, 서구권 자연환경"은 완벽하지만, 높은 물가(연 8천만원대)와 QCE/IB 커리큘럼을 소화해야 함.<br>
+            • <b>말레이시아 선택 시:</b> "수학 중심 A-Level 올인 + 절반의 비용(연 4천만원대) + 안전한 탈출구"를 얻지만, 아이가 사랑하는 야구를 포기하거나 대체 운동으로 전환해야 함.
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= PAGE 5: CAREER & AI ================= -->
+      <section class="wiki-page" id="page-career">
+        <div class="page-header">
+          <span class="page-tag">Career & Future</span>
+          <h1 class="page-title">10년 후 진로 전망: 야구 세이버메트릭스와 퀀트/데이터 사이언스</h1>
+          <p class="page-desc">AI가 사람을 대체하는 시대, 아이의 강점(수학)과 열정(야구)을 융합한 독보적 커리어 로드맵입니다.</p>
+        </div>
+
+        <div class="card-grid">
+          <div class="card-box">
+            <h3>⚾ 1. 스포츠 데이터 분석가 (세이버메트릭스)</h3>
+            <p><b>분야:</b> 프로야구단(KBO, MLB) 프런트 전략분석팀, 스포츠 에이전시, 데이터 통계 기업.</p>
+            <ul>
+              <li><b>하는 일:</b> 트랙맨(TrackMan), 호크아이(Hawk-Eye) 카메라로 수집된 초당 수만 프레임의 투구 궤적, 회전수, 타구 발사각 데이터를 분석해 전술 수립 및 선수 스카우팅.</li>
+              <li><b>시너지:</b> 선수를 직접 해본 사람만이 아는 "현장 도메인 지식"에 "수학적 모델링"이 결합될 때 최고의 분석가가 탄생함.</li>
+            </ul>
+          </div>
+          <div class="card-box">
+            <h3>📈 2. 퀀트(Quant) 및 금융공학자</h3>
+            <p><b>분야:</b> 글로벌 헤지펀드, 투자은행(IB), 자산운용사 알고리즘 트레이딩팀.</p>
+            <ul>
+              <li><b>하는 일:</b> 수학적 통계 모델과 알고리즘을 구축하여 금융 시장의 위험을 계량화하고 차익 거래를 자동화.</li>
+              <li><b>시너지:</b> A-Level Further Maths 및 연세대 언더우드 계량위험관리(QRM), 컴공 출신들의 대표적인 최고 연봉 전문직.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="callout success">
+          <span class="callout-icon">💻</span>
+          <div class="callout-body">
+            <strong>지금 당장 집에서 시작할 수 있는 파일럿: "파이썬 야구 데이터 시각화"</strong>
+            <p style="margin-top:4px;">아이에게 지루한 수학 문제집 대신, 아이가 좋아하는 야구 선수의 실시간 데이터를 파이썬(Python) 코드로 다루게 해줍니다.</p>
+            <ul style="margin-left: 20px; margin-top: 6px;">
+              <li>좋아하는 타자의 타구 방향 스프레이 차트(Spray Chart) 그려보기</li>
+              <li>투수의 직구와 슬라이더 궤적 3D 그래프로 시각화해보기</li>
+              <li>AI 툴(ChatGPT/Gemini)에게 "이 선수 타격 데이터를 그래프로 그려줘"라며 코딩을 게임 치트키처럼 활용해보기</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= PAGE 6: SCENARIOS ================= -->
+      <section class="wiki-page" id="page-scenarios">
+        <div class="page-header">
+          <span class="page-tag">Timeline & Scenarios</span>
+          <h1 class="page-title">2027년 vs 2028년 출국 시점 의사결정 매트릭스</h1>
+          <p class="page-desc">Queensland 학사 일정과 한국 중학교 과정을 비교하여 가장 안정적인 진입 경로를 확정합니다.</p>
+        </div>
+
+        <div class="table-wrap">
+          <table class="wiki-table">
+            <thead>
+              <tr>
+                <th>시나리오</th>
+                <th>출국 및 입학 시점</th>
+                <th>핵심 장점 및 전략적 의미</th>
+                <th>선결 과제 및 주의사항</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><b>시나리오 D<br><span class="tag tag-green">최고 안정안 ⭐</span></b></td>
+                <td><b>2028 Term 1</b><br>(2028년 1월 24일 개학)</td>
+                <td>• 한국 중1 전 과정을 온전히 수료하여 학적 리스크 제로<br>• 호주 1년 학제 첫날부터 모든 동급생과 동등하게 출발</td>
+                <td>2027년 한국에 머무는 1년 동안 나태해지지 않고 Academic English 밀도 관리 필수</td>
+              </tr>
+              <tr>
+                <td><b>시나리오 B<br><span class="tag tag-amber">유력 안전안</span></b></td>
+                <td><b>2027 Term 3 HSP</b><br>(2027년 7월 출국)</td>
+                <td>• 2027년 하반기(20주)를 현지 적응 및 영어 집중기(HSP)로 활용<br>• 2028 Term 1에 정규 과정으로 깔끔하게 승급</td>
+                <td>HSP 운영 학교(Whites Hill, Indooroopilly)로 학교군 제한, HSP 학비 추가(약 1,031만원)</td>
+              </tr>
+              <tr>
+                <td><b>시나리오 A<br><span class="tag tag-blue">조기 직행안</span></b></td>
+                <td><b>2027 Term 3 정규</b><br>(2027년 7월 출국)</td>
+                <td>현지 학업 적응을 가장 빠른 시점으로 앞당김</td>
+                <td>Academic English가 호주 현지 교과수업을 80% 이상 바로 소화할 수 있어야 함</td>
+              </tr>
+              <tr>
+                <td><b>시나리오 C</b></td>
+                <td><b>2027 Term 4 정규</b><br>(2027년 10월 출국)</td>
+                <td>한국 중1 2학기 중간까지 다니고 10주간 워밍업 적응</td>
+                <td>Term 4는 연말 평가 및 방학 시즌으로 학교 분위기가 어수선할 수 있음</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="card-box">
+          <h3>📅 공식 EQI 지원 마감일정 (Application Deadline)</h3>
+          <ul>
+            <li><b>2027 Term 3 목표 시:</b> 공식 마감 <b>2027년 2월 12일</b> (2026년 12월까지 학교/영어 확정 필수)</li>
+            <li><b>2028 Term 1 목표 시 (기준안):</b> 공식 마감 <b>2027년 7월 25일</b> (2027년 5월까지 서류 제출 권장)</li>
+            <li><i>※ HSP 패키지 신청 규정: 과정 시작 최소 14주 전에 완전한 신청서 제출 필수</i></li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ================= PAGE 7: SCHOOLS ================= -->
+      <section class="wiki-page" id="page-schools">
+        <div class="page-header">
+          <span class="page-tag">School Selection</span>
+          <h1 class="page-title">브리즈번 후보 학교 심층 분석 (주후보 3교 + 서브 2교)</h1>
+          <p class="page-desc">학업, ESL 지원, 클라리넷 밴드, 야구 클럽 연계 동선, 주거비를 종합 평가합니다.</p>
+        </div>
+
+        <div class="card-grid three">
+          <div class="card-box">
+            <span class="tag tag-green">생활안정·균형형</span>
+            <h3 style="margin-top:8px;">Sunnybank State High School</h3>
+            <p class="small"><b>위치:</b> Sunnybank (남부)</p>
+            <ul>
+              <li>50개국 이상 다문화 학생 대상 Academic Coaching 및 숙제 클럽 우수.</li>
+              <li>Instrumental Music 관악 밴드 운영 (클라리넷 연결 용이).</li>
+              <li><b>야구:</b> Runcorn Indians Baseball Club과 차량 7분 거리.</li>
+              <li><b>주거:</b> 아시안 마트/식당 완벽, 2BR 렌트 $520/wk선 (가장 경제적).</li>
+              <li><b>평가:</b> 초기 정착 스트레스가 가장 적은 편안한 안식처.</li>
+            </ul>
+          </div>
+          <div class="card-box">
+            <span class="tag tag-amber">영어적응 안전형</span>
+            <h3 style="margin-top:8px;">Whites Hill State College</h3>
+            <p class="small"><b>위치:</b> Camp Hill (동남부)</p>
+            <ul>
+              <li><b>자체 HSP 센터:</b> 브리즈번 공립 중 3곳뿐인 HSP 공식 운영교.</li>
+              <li>ESL 전문 교사진의 교과 연계 리터러시 집중 훈련.</li>
+              <li><b>야구:</b> Carina Red Sox 야구 클럽과 5분 거리 (동선 최상).</li>
+              <li><b>주거:</b> Camp Hill 주택가 (2BR $540/wk선), 차량 보유 권장.</li>
+              <li><b>평가:</b> 2027 T3 출국 시 영어 부담을 최소화하는 안전망.</li>
+            </ul>
+          </div>
+          <div class="card-box">
+            <span class="tag tag-purple">학업·음악 확장형</span>
+            <h3 style="margin-top:8px;">Indooroopilly State High School</h3>
+            <p class="small"><b>위치:</b> Indooroopilly (서부)</p>
+            <ul>
+              <li>IB World School 운영 및 UQ 대학교 학술 연계.</li>
+              <li><b>음악 최상:</b> Concert Band부터 Symphony Orchestra까지 최고 수준.</li>
+              <li><b>교통:</b> 기차역 + 대형 버스센터 + Westfield 몰 (차량 없이 생활 가능).</li>
+              <li><b>단점:</b> 높은 렌트비 ($700/wk선), 야구장(Darra) 거리 다소 멂.</li>
+              <li><b>평가:</b> 학업적·음악적 포텐셜은 최고 (IB 부담 고려 필요).</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="card-box" style="margin-top:20px;">
+          <h3>🏫 서브 후보군 (대안 검토용)</h3>
+          <div class="card-grid" style="margin:10px 0 0;">
+            <div>
+              <h4>Mount Gravatt State High School</h4>
+              <p>전통적인 남부 학업 명문 주립교. 로컬 학생 비율이 높고 차분한 면학 분위기. 2028 Term 1 정규 직접 진입 시 추천.</p>
+            </div>
+            <div>
+              <h4>Cavendish Road State High School</h4>
+              <p>Holland Park 위치. 수학/과학 아카데미 특성화. Carina 야구장 접근성 양호. 국제학생 쿼터 조기 마감 주의.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= PAGE 8: HOUSING ================= -->
+      <section class="wiki-page" id="page-housing">
+        <div class="page-header">
+          <span class="page-tag">Cost & Living</span>
+          <h1 class="page-title">주거지 렌트 시세 및 월 생활비 시뮬레이션</h1>
+          <p class="page-desc">엄마+아이 2인 기준 현실적인 월 지출 예산과 차량 유무에 따른 총비용 비교입니다. (환율 A$1 = ₩983.48 기준)</p>
+        </div>
+
+        <div class="card-grid">
+          <div class="card-box">
+            <h3>🏡 지역별 2BR 유닛 임대 시세</h3>
+            <div class="table-wrap">
+              <table class="wiki-table">
+                <thead><tr><th>지역</th><th>주당 렌트</th><th>한화 환산/월</th></tr></thead>
+                <tbody>
+                  <tr><td><b>Sunnybank</b></td><td>A$520/wk</td><td>약 222만원</td></tr>
+                  <tr><td><b>Camp Hill</b></td><td>A$540/wk</td><td>약 230만원</td></tr>
+                  <tr><td><b>Carina</b></td><td>A$630/wk</td><td>약 268만원</td></tr>
+                  <tr><td><b>Taringa</b></td><td>A$650/wk</td><td>약 277만원</td></tr>
+                  <tr><td><b>Indooroopilly</b></td><td>A$700/wk</td><td>약 298만원</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+          <div class="card-box">
+            <h3>🛒 엄마+아이 월 기본 생활비 (렌트 제외)</h3>
+            <div class="table-wrap">
+              <table class="wiki-table">
+                <thead><tr><th>항목</th><th>월 예산(AUD)</th><th>한화 환산</th></tr></thead>
+                <tbody>
+                  <tr><td>식비 및 생필품</td><td>A$1,200</td><td>약 118만원</td></tr>
+                  <tr><td>공과금 (전기/가스/수도)</td><td>A$300</td><td>약 30만원</td></tr>
+                  <tr><td>인터넷 및 휴대폰 2회선</td><td>A$150</td><td>약 15만원</td></tr>
+                  <tr><td>대중교통비 (50센트 요금제)</td><td>A$80</td><td>약 8만원</td></tr>
+                  <tr><td>학교 부대비 (교복/교재 등)</td><td>A$200</td><td>약 20만원</td></tr>
+                  <tr><td>의료/보험 여유분 + 여가잡비</td><td>A$750</td><td>약 74만원</td></tr>
+                  <tr><td><b>합계</b></td><td><b>A$2,680</b></td><td><b>약 264만원</b></td></tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-box">
+          <h3>💰 첫해 연간 총소요 예산 비교 (학비 + 연간 생활비)</h3>
+          <div class="table-wrap">
+            <table class="wiki-table">
+              <thead>
+                <tr>
+                  <th>생활권</th>
+                  <th>차량 미보유 시 (연간)</th>
+                  <th>차량 1대 보유 시 (연간)</th>
+                  <th>비고</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><b>Sunnybank 권역</b></td>
+                  <td><b>A$76,376 (약 7,511만원)</b></td>
+                  <td><b>A$84,416 (약 8,302만원)</b></td>
+                  <td>2027 정규학비 A$17,176 포함</td>
+                </tr>
+                <tr>
+                  <td><b>Camp Hill 권역</b></td>
+                  <td>A$77,416 (약 7,614만원)</td>
+                  <td><b>A$85,456 (약 8,404만원)</b></td>
+                  <td>차량 보유 필수 권장 생활권</td>
+                </tr>
+                <tr>
+                  <td><b>Indooroopilly 권역</b></td>
+                  <td><b>A$85,736 (약 8,432만원)</b></td>
+                  <td>A$93,776 (약 9,223만원)</td>
+                  <td>대중교통 완벽하여 초기 차 없이 가능</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="small">※ HSP 20주 이수 시 약 1,031만원 추가. 비자 수수료, 항공권, 가구 구입비, 렌트 보증금 등 초기 1회성 정착비는 별도.</p>
+        </div>
+      </section>
+
+      <!-- ================= PAGE 9: ENGLISH ================= -->
+      <section class="wiki-page" id="page-english">
+        <div class="page-header">
+          <span class="page-tag">Academic English</span>
+          <h1 class="page-title">영어 역량 진단 및 Academic English 로드맵</h1>
+          <p class="page-desc">DYB 포세이돈 반 레벨에 안주하지 않고, 호주 주립학교 교과 적합도를 실물 기반으로 판정합니다.</p>
+        </div>
+
+        <div class="card-grid">
+          <div class="card-box">
+            <h3>📂 수집 및 진단할 실물 데이터 목록</h3>
+            <ul>
+              <li>DYB 정기 성적표 및 레벨테스트 영역별 백분위</li>
+              <li>단원별 형성평가 시험지 및 주간 단어/문법 오답노트</li>
+              <li>수업 교재 목차 (Reading/Writing/Grammar)</li>
+              <li><b>실제 첨삭된 에세이(Writing Sample) 원본</b></li>
+              <li>Speaking 발표 동영상/음성 녹음</li>
+            </ul>
+          </div>
+          <div class="card-box">
+            <h3>⚖️ 한국 학원 영어 vs 호주 Academic English</h3>
+            <ul>
+              <li><b>Reading:</b> 객관식 수능형 지문 독해 → 과학·인문 교과서 요약 및 비판적 분석</li>
+              <li><b>Writing:</b> 문법 맞춤형 단락 영작 → 서론-본론-결론 구조의 정통 아카데믹 에세이</li>
+              <li><b>Speaking:</b> 1문 1답 회화 → 조별 토론 참여 및 연구 과제 프레젠테이션</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= PAGE 10: VISA ================= -->
+      <section class="wiki-page" id="page-visa">
+        <div class="page-header">
+          <span class="page-tag">Visa & Application</span>
+          <h1 class="page-title">EQI 지원 프로세스 및 학생·가디언 비자 규정</h1>
+          <p class="page-desc">학교 지원부터 CoE 발급, 학생비자(500) 및 가디언비자(590) 승인까지의 공식 절차입니다.</p>
+        </div>
+
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">STEP 1</div>
+            <div class="timeline-title">학교 1~3지망 선정 및 EQI 온라인 지원서 제출</div>
+            <div class="timeline-body">희망 학기, 여권 사본, 최근 2개년 학교 성적표, 영문 재학증명서 제출.</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">STEP 2</div>
+            <div class="timeline-title">오퍼(Letter of Offer) 수령 및 학비 예치금 납부</div>
+            <div class="timeline-body">학교 정원 및 학년 배정 확인 후 계약서 서명 및 요구 학비 송금.</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">STEP 3</div>
+            <div class="timeline-title">CoE(입학확인서) 발급 및 비자 동시 신청</div>
+            <div class="timeline-body">아이 학생비자(Subclass 500) + 엄마 가디언비자(Subclass 590) ImmiAccount 접수.</div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">STEP 4</div>
+            <div class="timeline-title">신체검사 및 비자 최종 승인</div>
+            <div class="timeline-body">지정 병원 신검 완료 후 비자 승인 레터 수령 → 항공권 및 주거지 계약 확정.</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= PAGE 11: RETURN SAFETY ================= -->
+      <section class="wiki-page" id="page-return">
+        <div class="page-header">
+          <span class="page-tag">Exit Safety</span>
+          <h1 class="page-title">한국 복귀 안전장치 및 중도귀국 시점별 영향 분석</h1>
+          <p class="page-desc">언제든 국내로 유턴하더라도 학업과 입시 손실이 없도록 사전에 구축하는 안전망입니다.</p>
+        </div>
+
+        <div class="table-wrap">
+          <table class="wiki-table">
+            <thead>
+              <tr>
+                <th>귀국 시점</th>
+                <th>국내 학적 편입</th>
+                <th>국내 고교 및 대입 영향</th>
+                <th>핵심 대응 전략</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><b>중2 중도 귀국</b></td>
+                <td>거주지 관할 중학교 2학년 재취학</td>
+                <td>내신 영향 전혀 없음, 일반고 진학 무난</td>
+                <td>한국 수학 진도 메우기 및 학교 적응</td>
+              </tr>
+              <tr>
+                <td><b>중3 중도 귀국</b></td>
+                <td>중3 재취학 후 중학교 졸업</td>
+                <td>고입 내신 산출 방식 확인 필요</td>
+                <td>중3 2학기 고입 내신 커트라인 관리</td>
+              </tr>
+              <tr>
+                <td><b>고1 중도 귀국</b></td>
+                <td>고등학교 1학년 편입학</td>
+                <td>한국 고교 내신(상대평가) 즉각 직면, 정시 수능 비중 확대</td>
+                <td>공통국어/공통수학 선행 갭 극복</td>
+              </tr>
+              <tr>
+                <td><b>고2 이후 완주</b></td>
+                <td>호주/말레이시아 졸업 후 대입</td>
+                <td><b>연세대 언더우드 등 수시 학종(국제형)</b> 또는 해외 명문대(Go8) 직행</td>
+                <td>A-Level 최상위 성적 ($A^*AA$) 및 비교과 포트폴리오 완성</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="card-box">
+          <h3>📑 호주 체류 중 학기별 필수 보관 서류</h3>
+          <ul>
+            <li>호주 학교 재학증명서 (Enrolment Certificate)</li>
+            <li>학기별 공식 성적표 (Semester Report Cards 원본)</li>
+            <li>출석 확인서 (Attendance Letter - 출석률 80% 이상 명시)</li>
+            <li>입학일 및 퇴학일(재학기간)이 정확히 기재된 학교장 레터</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ================= PAGE 12: TIMELINE ================= -->
+      <section class="wiki-page" id="page-timeline">
+        <div class="page-header">
+          <span class="page-tag">Action Roadmap</span>
+          <h1 class="page-title">향후 18개월 핵심 마일스톤 및 실행 타임라인</h1>
+          <p class="page-desc">2026년 9월부터 2028년 1월 출국까지 가족이 밟아갈 체계적인 일정표입니다.</p>
+        </div>
+
+        <div class="timeline">
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">2026년 9월 ~ 12월</div>
+            <div class="timeline-title">국가/커리큘럼 방향 확정 & 영어 진단</div>
+            <div class="timeline-body">
+              • 부부 최종 합의: [호주 브리즈번(야구/라이프)] vs [말레이시아(A-Level/가성비)] 우선순위 결정.<br>
+              • DYB 최선어학원 실물 자료 기반 Academic English 정밀 분석.<br>
+              • 아이와 파이썬 야구 데이터 시각화 맛보기 진행.
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">2027년 1월 ~ 2월</div>
+            <div class="timeline-title">출국 시기 1차 분기점 확정</div>
+            <div class="timeline-body">
+              • 만약 2027 T3 조기 출국 시: 2027-02-12 마감 전 긴급 지원 접수.<br>
+              • 2028 T1 기준안 확정 시: 한국 중1 학업 전념 및 심화수학/영어 몰입.
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">2027년 5월 ~ 7월</div>
+            <div class="timeline-title">2028 T1 공식 학교 지원 접수</div>
+            <div class="timeline-body">
+              • EQI 공식 지원서 제출 (마감 7/25 전 5~6월 완료 권장).<br>
+              • 오퍼 수령, 학비 예치금 납부, CoE 발급.
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">2027년 8월 ~ 11월</div>
+            <div class="timeline-title">비자 승인 및 행정·생활망 구축</div>
+            <div class="timeline-body">
+              • 학생비자(500) + 가디언비자(590) 발급 완료.<br>
+              • 한국 중학교 유예(정원외관리) 행정절차 사전 확인.<br>
+              • 현지 야구 클럽 및 클라리넷 악보/영상 준비.
+            </div>
+          </div>
+          <div class="timeline-item">
+            <div class="timeline-dot"></div>
+            <div class="timeline-date">2028년 1월</div>
+            <div class="timeline-title">현지 출국 및 개학</div>
+            <div class="timeline-body">
+              • 2028년 1월 24일 Term 1 정규 입학!<br>
+              • 클라리넷 밴드 및 주니어 야구 클럽 동시 등록.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= PAGE 13: CHECKLIST ================= -->
+      <section class="wiki-page" id="page-checklist">
+        <div class="page-header">
+          <span class="page-tag">Master Checklist</span>
+          <h1 class="page-title">프로젝트 실시간 마스터 체크리스트</h1>
+          <p class="page-desc">체크 항목을 클릭하면 브라우저에 자동 저장되어 진행 상황을 언제든 확인할 수 있습니다.</p>
+        </div>
+
+        <div class="checklist-card">
+          <div class="check-item" onclick="toggleCheck(this)">
+            <input type="checkbox" checked>
+            <div class="check-content">
+              <div class="check-title">3년 특례의 법적 현실 확인 완료</div>
+              <div class="check-sub">엄마 가디언(590) 비자 체류 시 재외국민 3년 특례 100% 불가 확인.</div>
+            </div>
+          </div>
+          <div class="check-item" onclick="toggleCheck(this)">
+            <input type="checkbox" checked>
+            <div class="check-content">
+              <div class="check-title">국내 수시 학종 대안 확정</div>
+              <div class="check-sub">연세대 언더우드 등 국내 상위권 수시 학생부종합전형(국제형) 지원 가능성 확인.</div>
+            </div>
+          </div>
+          <div class="check-item" onclick="toggleCheck(this)">
+            <input type="checkbox" checked>
+            <div class="check-content">
+              <div class="check-title">학생 맞춤형 커리큘럼(A-Level) 도출</div>
+              <div class="check-sub">수학 몰입형 이과 성향에 맞춘 수학+심화수학+컴공 3과목 올인 전략 수립.</div>
+            </div>
+          </div>
+          <div class="check-item" onclick="toggleCheck(this)">
+            <input type="checkbox" checked>
+            <div class="check-content">
+              <div class="check-title">국가별 비교 분석 완료</div>
+              <div class="check-sub">호주 브리즈번(야구/삶의질) vs 말레이시아(A-Level/가성비/저리스크) 비교표 확정.</div>
+            </div>
+          </div>
+          <div class="check-item" onclick="toggleCheck(this)">
+            <input type="checkbox" checked>
+            <div class="check-content">
+              <div class="check-title">10년 진로 설계</div>
+              <div class="check-sub">스포츠 데이터 분석가(세이버메트릭스), 퀀트, 데이터 사이언티스트 방향성 정립.</div>
+            </div>
+          </div>
+          <div class="check-item" onclick="toggleCheck(this)">
+            <input type="checkbox">
+            <div class="check-content">
+              <div class="check-title">[진행예정] DYB 포세이돈 반 실제 성적표/에세이 샘플 정밀 분석</div>
+              <div class="check-sub">리딩/라이팅/문법 실물 자료를 바탕으로 Academic English 준비도 진단.</div>
+            </div>
+          </div>
+          <div class="check-item" onclick="toggleCheck(this)">
+            <input type="checkbox">
+            <div class="check-content">
+              <div class="check-title">[진행예정] 아이와 함께하는 '파이썬 야구 데이터 시각화' 파일럿</div>
+              <div class="check-sub">타구 발사각 및 스프레이 차트 파이썬 코딩으로 수학 흥미 유발.</div>
+            </div>
+          </div>
+          <div class="check-item" onclick="toggleCheck(this)">
+            <input type="checkbox">
+            <div class="check-content">
+              <div class="check-title">[진행예정] 부부 최종 합의: 호주 공립 vs 말레이시아 A-Level</div>
+              <div class="check-sub">야구 환경과 가성비/리스크 통제 사이의 최종 무게중심 조율.</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </div>
+</div>
+
+<script>
+// Page Switcher
+function switchPage(pageId, navElement) {
+  // Hide all pages
+  document.querySelectorAll('.wiki-page').forEach(p => p.classList.remove('active'));
+  // Show target page
+  const target = document.getElementById(pageId);
+  if(target) target.classList.add('active');
+
+  // Update Nav
+  if(navElement) {
+    document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('active'));
+    navElement.classList.add('active');
+  } else {
+    // Sync nav by pageId
+    document.querySelectorAll('.nav-item').forEach(item => {
+      const onclickAttr = item.getAttribute('onclick');
+      if(onclickAttr && onclickAttr.includes(pageId)) {
+        document.querySelectorAll('.nav-item').forEach(i => i.classList.remove('active'));
+        item.classList.add('active');
+      }
+    });
+  }
+
+  // Update Breadcrumb
+  const pageTitle = target.querySelector('.page-title');
+  if(pageTitle) {
+    document.getElementById('breadcrumbTitle').innerText = pageTitle.innerText;
+  }
+
+  // Close Mobile Sidebar
+  document.getElementById('sidebar').classList.remove('mobile-open');
+
+  // Scroll to top
+  document.querySelector('.content-area').scrollTop = 0;
+}
+
+// Mobile Toggle
+function toggleMobileSidebar() {
+  document.getElementById('sidebar').classList.toggle('mobile-open');
+}
+
+// Copy Share Link
+function copyShareLink() {
+  navigator.clipboard.writeText(window.location.href);
+  alert('현재 위키 페이지 웹 주소가 클립보드에 복사되었습니다. 가족/배우자에게 전달하세요!');
+}
+
+// Interactive Checklist Storage
+function toggleCheck(item) {
+  const checkbox = item.querySelector('input[type="checkbox"]');
+  // if event wasn't direct checkbox click
+  if (event.target !== checkbox) {
+    checkbox.checked = !checkbox.checked;
+  }
+  saveChecklistState();
+}
+
+function saveChecklistState() {
+  const states = [];
+  document.querySelectorAll('.check-item input[type="checkbox"]').forEach((cb, idx) => {
+    states.push(cb.checked);
+  });
+  localStorage.setItem('eduplan_checklist', JSON.stringify(states));
+}
+
+function loadChecklistState() {
+  const saved = localStorage.getItem('eduplan_checklist');
+  if(saved) {
+    try {
+      const states = JSON.parse(saved);
+      document.querySelectorAll('.check-item input[type="checkbox"]').forEach((cb, idx) => {
+        if(states[idx] !== undefined) cb.checked = states[idx];
+      });
+    } catch(e) {}
+  }
+}
+
+// Search Filter
+function filterWikiContent() {
+  const query = document.getElementById('wikiSearch').value.toLowerCase().trim();
+  if(!query) {
+    document.querySelectorAll('.nav-item').forEach(el => el.style.display = 'flex');
+    return;
+  }
+  document.querySelectorAll('.nav-item').forEach(item => {
+    const text = item.innerText.toLowerCase();
+    if(text.includes(query)) {
+      item.style.display = 'flex';
+    } else {
+      item.style.display = 'none';
+    }
+  });
+}
+
+// Init
+window.addEventListener('DOMContentLoaded', () => {
+  loadChecklistState();
+});
+</script>
+</body>
+</html>

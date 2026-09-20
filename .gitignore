@@ -1,0 +1,6 @@
+cloudflared.exe
+*.log
+*.txt
+*.ps1
+*.bat
+server.js
