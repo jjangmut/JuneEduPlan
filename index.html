@@ -637,10 +637,6 @@ table.wiki-table tr:hover td {
         <span class="nav-icon">⚖️</span>
         <span>[핵심 선택] 호주 vs 말레이시아</span>
       </a>
-      <a class="nav-item" onclick="switchPage('page-notes', this)" style="background: rgba(217,119,6,0.18); border: 1px solid rgba(245,158,11,0.5); color:#fef3c7; font-weight:700;">
-        <span class="nav-icon">📑</span>
-        <span>[비고] 가계 수지 & 엄마 새출발</span>
-      </a>
     </div>
 
     <!-- 2. 대입 & 커리큘럼 전략 -->
@@ -683,10 +679,6 @@ table.wiki-table tr:hover td {
         <span class="nav-icon">🏡</span>
         <span>[말레이시아] 렌트 & 생활비 시뮬레이션</span>
       </a>
-      <a class="nav-item" onclick="switchPage('page-notes', this)">
-        <span class="nav-icon">🎨</span>
-        <span>[비고] 엄마 새출발 (14년 팀장 전환)</span>
-      </a>
     </div>
 
     <!-- 4. 호주 브리즈번 트랙 -->
@@ -724,6 +716,19 @@ table.wiki-table tr:hover td {
       <a class="nav-item" onclick="switchPage('page-checklist', this)">
         <span class="nav-icon">✅</span>
         <span>마스터 체크리스트</span>
+      </a>
+    </div>
+
+    <!-- 6. 참고사항 -->
+    <div class="nav-group">
+      <div class="nav-group-title">📑 참고사항</div>
+      <a class="nav-item" onclick="switchPage('page-budget', this)" style="background: rgba(245,158,11,0.12); border-left: 3px solid #f59e0b;">
+        <span class="nav-icon">💵</span>
+        <span>가계 수지</span>
+      </a>
+      <a class="nav-item" onclick="switchPage('page-mom-career', this)" style="background: rgba(139,92,246,0.12); border-left: 3px solid #8b5cf6;">
+        <span class="nav-icon">🎨</span>
+        <span>엄마 새출발</span>
       </a>
     </div>
   </nav>
@@ -820,7 +825,8 @@ table.wiki-table tr:hover td {
         <div class="card-box" style="margin-top:20px;">
           <h3>🚀 주요 바로가기</h3>
           <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:10px;">
-            <button class="btn-action" onclick="switchPage('page-notes', null)" style="background:#fffbeb; border-color:#f59e0b; color:#92400e; font-weight:700;">📑 [비고] 가계 수지 & 엄마 새출발</button>
+            <button class="btn-action" onclick="switchPage('page-budget', null)" style="background:#fffbeb; border-color:#f59e0b; color:#92400e; font-weight:700;">💵 가계 수지</button>
+            <button class="btn-action" onclick="switchPage('page-mom-career', null)" style="background:#f5f3ff; border-color:#8b5cf6; color:#6d28d9; font-weight:700;">🎨 엄마 새출발</button>
             <button class="btn-action" onclick="switchPage('page-factcheck', null)">🚨 3년 특례 팩트체크</button>
             <button class="btn-action" onclick="switchPage('page-yonsei-uic', null)">🎓 연세대 언더우드 수시</button>
             <button class="btn-action" onclick="switchPage('page-curriculum', null)">🎯 왜 A-Level인가?</button>
@@ -1510,18 +1516,18 @@ table.wiki-table tr:hover td {
         </div>
       </section>
 
-      <!-- ================= PAGE: NOTES & MOM CAREER ================= -->
-      <section class="wiki-page" id="page-notes">
+      <!-- ================= PAGE: 가계 수지 (BUDGET) ================= -->
+      <section class="wiki-page" id="page-budget">
         <div class="page-header">
-          <span class="page-tag" style="background:#fef3c7; color:#92400e;">Financial Notes & Mom's Next Step</span>
-          <h1 class="page-title">📑 [비고] 실가계 수지 분석 & 엄마 새출발 루트</h1>
-          <p class="page-desc">남편 세후 540만원 소득 기준 해외 2인 생활 가능성 정밀 검증(비고) 및 그 아래 연계되는 14년 팀장 엄마의 커리어 전환·패시브 인컴 종합 로드맵입니다.</p>
+          <span class="page-tag" style="background:#fef3c7; color:#92400e;">Financial Simulation</span>
+          <h1 class="page-title">💵 [참고사항] 가계 수지 분석 & 해외 송금 시뮬레이션</h1>
+          <p class="page-desc">남편 세후 540만원 소득 기준, 한국 고정지출(97.6만 원) 및 1인 생활비(90만 원)를 차감한 순수 해외 송금 가용액(월 345~355만원)으로 호주 vs 말레이시아 2인 체류 가능성을 정밀 검증한 가계 재정 시뮬레이션입니다.</p>
         </div>
 
-        <!-- 1. 비고 섹션: 남편 세후 540만원 기준 실가계 수지 분석 -->
+        <!-- 1. 남편 세후 540만원 기준 실가계 수지 분석 카드 -->
         <div class="card-box" style="border: 2px solid #2563eb; background: #f8fafc;">
           <h3 style="color: #1e40af; font-size: 17px; display:flex; align-items:center; gap:8px;">
-            <span style="background: #2563eb; color: #fff; padding: 2px 8px; border-radius: 6px; font-size: 12px;">비고 (Financial Notes)</span>
+            <span style="background: #2563eb; color: #fff; padding: 2px 8px; border-radius: 6px; font-size: 12px;">참고사항 1</span>
             실제 가계 수지 분석: "남편 세후 540만원 소득 기준, 해외 2인 생활 가능성 검증"
           </h3>
           <p style="font-size: 13.5px; color: #475569; margin: 8px 0 14px; line-height: 1.6;">
@@ -1605,7 +1611,7 @@ table.wiki-table tr:hover td {
           <div class="callout success" style="margin: 0;">
             <span class="callout-icon">💡</span>
             <div class="callout-body">
-              <strong>가계 재정 지속 정리 & 최적화 메모 (비고):</strong>
+              <strong>가계 재정 지속 정리 & 최적화 메모:</strong>
               <ul style="margin: 4px 0 0 18px; font-size: 12.5px; line-height: 1.6;">
                 <li><b>노트북 할부금 (148,700원):</b> 할부 개월 수 확인 후 완납 시 매월 약 15만 원의 순수 여유자금 추가 발생.</li>
                 <li><b>준이 통신요금 (14,500원):</b> 출국 시 한국 알뜰폰 기본요금제(월 1,900원~3,300원 문자 수신 전용)로 다운그레이드하여 번호 유지 + 현지 통신비(월 1~1.5만원)로 최적화.</li>
@@ -1615,15 +1621,17 @@ table.wiki-table tr:hover td {
             </div>
           </div>
         </div>
+      </section>
 
-        <!-- 2. 엄마의 새출발 (비고 바로 밑에 배치!) -->
-        <div class="card-box" style="margin-top: 24px; border-top: 4px solid #7c3aed;">
-          <div style="margin-bottom:14px;">
-            <span class="tag tag-purple">Mom's New Chapter</span>
-            <h3 style="color:#1e1b4b; font-size:17px; margin-top:6px;">🎨 14년 배경그래픽 팀장의 새출발 & 커리어 전환 루트</h3>
-            <p style="font-size:13px; color:#64748b; margin-top:4px;">크로스파이어 14년의 치열한 팀장 경력은 최고의 자산입니다. 번아웃을 회복하고 피로도를 낮추며 글로벌로 확장할 수 있는 4대 커리어 루트입니다.</p>
-          </div>
+      <!-- ================= PAGE: 엄마 새출발 (MOM CAREER) ================= -->
+      <section class="wiki-page" id="page-mom-career">
+        <div class="page-header">
+          <span class="page-tag" style="background:#f3e8ff; color:#6b21a8;">Mom's New Chapter</span>
+          <h1 class="page-title">🎨 [참고사항] 14년 배경그래픽 팀장의 새출발 & 커리어 전환 루트</h1>
+          <p class="page-desc">크로스파이어 14년의 치열한 팀장 경력은 최고의 자산입니다. 번아웃을 회복하고 피로도를 낮추며 글로벌로 확장할 수 있는 4대 커리어 전환 및 패시브 인컴 로드맵입니다.</p>
+        </div>
 
+        <div class="card-box" style="border-top: 4px solid #7c3aed;">
           <div class="callout success">
             <span class="callout-icon">👏</span>
             <div class="callout-body">
@@ -2601,7 +2609,7 @@ table.wiki-table tr:hover td {
 <script>
 // Page Switcher
 function switchPage(pageId, navElement) {
-  if (pageId === 'page-mom-career') pageId = 'page-notes';
+  if (pageId === 'page-notes') pageId = 'page-budget';
   document.querySelectorAll('.wiki-page').forEach(p => p.classList.remove('active'));
   const target = document.getElementById(pageId);
   if(target) target.classList.add('active');
