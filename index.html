@@ -626,56 +626,64 @@ table.wiki-table tr:hover td {
   </div>
 
   <nav class="sidebar-nav">
+    <!-- 1. 한눈에 보는 핵심 요약 -->
     <div class="nav-group">
-      <div class="nav-group-title">대시보드</div>
+      <div class="nav-group-title">📌 한눈에 보는 핵심 요약</div>
       <a class="nav-item active" onclick="switchPage('page-overview', this)">
         <span class="nav-icon">📊</span>
         <span>프로젝트 총괄 현황</span>
       </a>
+      <a class="nav-item" onclick="switchPage('page-country', this)" style="background: rgba(37,99,235,0.18); border: 1px solid rgba(59,130,246,0.4); color:#fff; font-weight:700;">
+        <span class="nav-icon">⚖️</span>
+        <span>[핵심 선택] 호주 vs 말레이시아</span>
+      </a>
     </div>
 
+    <!-- 2. 대입 & 커리큘럼 전략 -->
     <div class="nav-group">
-      <div class="nav-group-title">가족 핵심 전략 (Family Decisions)</div>
-      <a class="nav-item" onclick="switchPage('page-mom-career', this)">
-        <span class="nav-icon">🎨</span>
-        <span>엄마의 새출발 & 커리어 전환</span>
-      </a>
+      <div class="nav-group-title">🎓 대입 & 커리큘럼 전략</div>
       <a class="nav-item" onclick="switchPage('page-factcheck', this)">
         <span class="nav-icon">🚨</span>
-        <span>대입 팩트체크 (3년특례 vs 수시)</span>
-      </a>
-      <a class="nav-item" onclick="switchPage('page-yonsei-uic', this)">
-        <span class="nav-icon">🎓</span>
-        <span>연세대 언더우드 수시 정밀 가이드</span>
+        <span>3년 특례 팩트체크 (법적 진실)</span>
       </a>
       <a class="nav-item" onclick="switchPage('page-curriculum', this)">
         <span class="nav-icon">🎯</span>
-        <span>커리큘럼: 왜 A-Level인가?</span>
+        <span>왜 IB가 아닌 A-Level인가?</span>
+      </a>
+      <a class="nav-item" onclick="switchPage('page-yonsei-uic', this)">
+        <span class="nav-icon">🏛️</span>
+        <span>연세대 언더우드 수시 합격 전략</span>
       </a>
       <a class="nav-item" onclick="switchPage('page-alevel-hurdle', this)">
         <span class="nav-icon">📈</span>
-        <span>A-Level 체감 난이도 & IGCSE 로드맵</span>
-      </a>
-      <a class="nav-item" onclick="switchPage('page-country', this)">
-        <span class="nav-icon">🌏</span>
-        <span>호주 vs 말레이시아 7대 심층 대조</span>
-      </a>
-      <a class="nav-item" onclick="switchPage('page-malaysia-biz', this)">
-        <span class="nav-icon">🏢</span>
-        <span>말레이시아 1인 법인 & 3년 특례</span>
+        <span>A-Level 난이도 & IGCSE 로드맵</span>
       </a>
       <a class="nav-item" onclick="switchPage('page-career', this)">
         <span class="nav-icon">⚾</span>
-        <span>10년 진로 & AI 시대 생존법</span>
+        <span>10년 진로 & 세이버메트릭스</span>
       </a>
       <a class="nav-item" onclick="switchPage('page-python-pilot', this)">
         <span class="nav-icon">💻</span>
-        <span>파이썬 야구 데이터 실습 (코랩)</span>
+        <span>[체험] 파이썬 야구 데이터 실습</span>
       </a>
     </div>
 
+    <!-- 3. 말레이시아 트랙 -->
     <div class="nav-group">
-      <div class="nav-group-title">호주 브리즈번 실행 계획</div>
+      <div class="nav-group-title">🇲🇾 말레이시아 트랙 (A-Level & 인디게임)</div>
+      <a class="nav-item" onclick="switchPage('page-malaysia-biz', this)">
+        <span class="nav-icon">🏢</span>
+        <span>1인 인디게임 법인 & 3년 특례</span>
+      </a>
+      <a class="nav-item" onclick="switchPage('page-mom-career', this)">
+        <span class="nav-icon">🎨</span>
+        <span>엄마 새출발 (14년 팀장 전환)</span>
+      </a>
+    </div>
+
+    <!-- 4. 호주 브리즈번 트랙 -->
+    <div class="nav-group">
+      <div class="nav-group-title">🇦🇺 호주 브리즈번 트랙 (야구 & 공립)</div>
       <a class="nav-item" onclick="switchPage('page-scenarios', this)">
         <span class="nav-icon">🗓️</span>
         <span>2027 vs 2028 출국 시나리오</span>
@@ -694,19 +702,20 @@ table.wiki-table tr:hover td {
       </a>
       <a class="nav-item" onclick="switchPage('page-visa', this)">
         <span class="nav-icon">📑</span>
-        <span>EQI 지원 & 비자 규정</span>
+        <span>EQI 지원 절차 & 500/590 비자</span>
       </a>
     </div>
 
+    <!-- 5. 안전망 & 마일스톤 -->
     <div class="nav-group">
-      <div class="nav-group-title">안전망 및 실행 관리</div>
+      <div class="nav-group-title">🛡️ 안전망 & 마일스톤 관리</div>
       <a class="nav-item" onclick="switchPage('page-return', this)">
         <span class="nav-icon">🛡️</span>
-        <span>한국 복귀 & 중도귀국 안전장치</span>
+        <span>중도 귀국 시점별 영향 분석</span>
       </a>
       <a class="nav-item" onclick="switchPage('page-timeline', this)">
         <span class="nav-icon">⏳</span>
-        <span>향후 18개월 마일스톤</span>
+        <span>향후 18개월 로드맵</span>
       </a>
       <a class="nav-item" onclick="switchPage('page-checklist', this)">
         <span class="nav-icon">✅</span>
@@ -1425,17 +1434,18 @@ table.wiki-table tr:hover td {
           
           <div class="card-grid" style="margin:12px 0 0;">
             <div>
-              <h4>A. 비즈니스 모델 구성</h4>
+              <h4>A. 비즈니스 모델: 외주 스트레스 제로! "자체 인디 게임 & 에셋 런칭"</h4>
               <ul>
-                <li><b>글로벌 3D 아트 외주:</b> 국내 게임사(스마일게이트 등), 북미/유럽 게임 스튜디오 배경 그래픽 컨설팅 및 제작 용역.</li>
-                <li><b>버추얼 프로덕션 에셋:</b> 영화/드라마 언리얼 인카메라 VFX 환경 에셋 제작.</li>
-                <li><b>에셋 마켓플레이스 판매:</b> ArtStation, Unreal Marketplace, Gumroad 등 글로벌 달러 결제 수익 수취.</li>
+                <li><b>클라이언트 외주 불필요:</b> 또다시 마감 지옥과 피드백 스트레스를 겪는 외주를 할 필요가 전혀 없음.</li>
+                <li><b>스팀(Steam) & 모바일 마켓 직접 출시:</b> 14년 배경그래픽 노하우로 본인이 만들고 싶었던 인디 게임, 비주얼 퍼즐, 힐링 게임을 직접 개발 및 출시.</li>
+                <li><b>위조 불가능한 공신력:</b> 스팀(Valve), 애플, 구글의 개발자 계약서와 정산서(Payout)는 대학 입학처가 1초 만에 인정하는 최고의 글로벌 사업 실체 증빙.</li>
+                <li><b>3D 에셋 스토어 병행:</b> 작업 과정에서 제작한 모듈러 배경 프랍을 언리얼/유니티 마켓플레이스에 등록해 지속적인 달러 패시브 인컴 창출.</li>
               </ul>
             </div>
             <div>
               <h4>B. MDEC Malaysia Digital (MD) Status 혜택</h4>
               <ul>
-                <li>말레이시아 디지털경제공사(MDEC)에서 부여하는 국가 공인 테크 기업 지위.</li>
+                <li>말레이시아 디지털경제공사(MDEC)는 외주 하청보다 <b>자체 IP 게임 개발사</b>를 가장 우대함.</li>
                 <li><b>외국인 취업비자(EP) 쿼터 신속 승인 (패스트트랙).</b></li>
                 <li>자본금 및 로컬 고용 규정에서 유연성 부여.</li>
               </ul>
@@ -1443,8 +1453,10 @@ table.wiki-table tr:hover td {
           </div>
 
           <div class="callout purple" style="margin-top:14px;">
-            <strong>세무 운영의 핵심 (특례 충족 공식):</strong><br>
-            법인 통장으로 외주 매출을 입금받은 후, <b>본인에게 매월 대표자 급여(월 RM 10,000 ~ 15,000 이상)를 정식 지급</b>하고, 말레이시아 국세청(LHDN)에 <b>개인소득세(Monthly Tax Deduction - PCB)를 매월 성실히 납부</b>합니다. 이 납세 영수증이 3년 뒤 한국 대학 입학처를 뚫는 결정적인 마스터키가 됩니다.
+            <strong>💡 "마켓 수익이 적어도 특례가 되나요?" (세무 & 입시 실전 테크닉):</strong><br>
+            • <b>입학처의 심사 기준:</b> 대교협 규정에는 "매출이 1년에 얼마 이상이어야 한다"는 기준이 없습니다. 오직 <b>"실제 사업을 했는가(스팀 상점/다운로드 소명)"</b>와 <b>"소득세를 정상 납부했는가"</b>만 봅니다.<br>
+            • <b>자본금 활용 공식:</b> 게임 매출이 적더라도, 법인 통장에 들어있는 초기 자본금(RM 500,000)에서 <b>본인에게 매달 대표 급여(월 RM 8,000 ~ 10,000)를 꼬박꼬박 지급</b>하고, 말레이시아 국세청(LHDN)에 <b>개인소득세(월 15만~30만원 선)를 성실히 납부</b>합니다.<br>
+            👉 대학 입학처에는 <b>"정식 인디 게임 스튜디오에서 월급을 받으며 매달 국가에 세금을 낸 어엿한 해외근무자/대표"</b>로 완벽하게 인정받게 됩니다!
           </div>
         </div>
 
